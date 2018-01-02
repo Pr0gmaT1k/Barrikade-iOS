@@ -38,26 +38,32 @@ final class PageMenuViewController: UIViewController {
     self.title = L10n.navbarMainTitle
     
     let mainNewsVC = StoryboardScene.Main.mainNewsViewController.instantiate()
-    mainNewsVC.title = L10n.pageMenuLocalInfos
+    mainNewsVC.title = L10n.pageMenuAktuel
+    mainNewsVC.view.backgroundColor = UIColor.gray
     
-    let analysesVC = StoryboardScene.Main.newsViewController.instantiate()
-    analysesVC.title = L10n.pageMenuAnalyses
+    let localInfosVC = StoryboardScene.Main.newsViewController.instantiate()
+    localInfosVC.title = L10n.pageMenuLocalInfos
+    localInfosVC.view.backgroundColor = UIColor.yellow
     
-    let elseWhereVC = StoryboardScene.Main.newsViewController.instantiate()
-    elseWhereVC.title = L10n.pageMenuElsewhere
-    elseWhereVC.view.backgroundColor = UIColor.red
+    let analyseVC = StoryboardScene.Main.newsViewController.instantiate()
+    analyseVC.title = L10n.pageMenuAnalyses
+    analyseVC.view.backgroundColor = UIColor.green
     
-    let guidesVC = StoryboardScene.Main.newsViewController.instantiate()
-    guidesVC.title = L10n.pageMenuGuide
-    guidesVC.view.backgroundColor = UIColor.darkGray
+    let globaleInfosVC = StoryboardScene.Main.newsViewController.instantiate()
+    globaleInfosVC.title = L10n.pageMenuGlobaleInfos
+    globaleInfosVC.view.backgroundColor = UIColor.red
     
-    controllerArray.append(contentsOf: [mainNewsVC, analysesVC, elseWhereVC, guidesVC])
+    let agendaVC = StoryboardScene.Main.newsViewController.instantiate()
+    agendaVC.title = L10n.pageMenuAgenda
+    agendaVC.view.backgroundColor = UIColor.blue
+    
+    controllerArray.append(contentsOf: [mainNewsVC, localInfosVC, analyseVC, globaleInfosVC, agendaVC])
     
     // Page menu options
     let parameters: [CAPSPageMenuOption] = [
       .menuItemWidthBasedOnTitleTextWidth(true),
-      .scrollMenuBackgroundColor(UIColor(named: .pageMenuPurple)),
-      .viewBackgroundColor(UIColor(named: .pageMenuPurple)),
+      .scrollMenuBackgroundColor(UIColor(named: .pageMenu)),
+      .viewBackgroundColor(UIColor(named: .pageMenu)),
       .unselectedMenuItemLabelColor(.white),
       .selectionIndicatorHeight(1)
     ]

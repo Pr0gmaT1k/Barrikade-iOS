@@ -1,2 +1,2 @@
-MainPurple: #d500f9
-PageMenuPurple: #ab47bc
+Main: #FC7122
+PageMenu: #E64A19

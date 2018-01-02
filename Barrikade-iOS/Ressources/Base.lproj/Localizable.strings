@@ -3,7 +3,8 @@
 "navbar_main_title" = "BARRIKADE";
 
 // MARK:- Page menu
-"page_menu_local_infos" = "INFOS LOCALES";
-"page_menu_analyses" = "ANALYSES";
-"page_menu_elsewhere" = "AILLEURS";
-"page_menu_guide" = "GUIDE PRATIQUE";
+"page_menu_aktuel" = "AKTUEL";
+"page_menu_local_infos" = "LOKALE INFOS";
+"page_menu_analyses" = "ANALYSE";
+"page_menu_globale_infos" = "GLOBALE INFOS";
+"page_menu_agenda" = "AGENDA";

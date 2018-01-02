@@ -29,12 +29,12 @@ struct ColorName {
   let rgbaValue: UInt32
   var color: Color { return Color(named: self) }
 
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#d500f9"></span>
-  /// Alpha: 100% <br/> (0xd500f9ff)
-  static let mainPurple = ColorName(rgbaValue: 0xd500f9ff)
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ab47bc"></span>
-  /// Alpha: 100% <br/> (0xab47bcff)
-  static let pageMenuPurple = ColorName(rgbaValue: 0xab47bcff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#fc7122"></span>
+  /// Alpha: 100% <br/> (0xfc7122ff)
+  static let main = ColorName(rgbaValue: 0xfc7122ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#e64a19"></span>
+  /// Alpha: 100% <br/> (0xe64a19ff)
+  static let pageMenu = ColorName(rgbaValue: 0xe64a19ff)
 }
 // swiftlint:enable identifier_name line_length type_body_length
 
