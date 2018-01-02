@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		19D55E8061D387A7416B96FA /* Pods_Barrikade_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E20798C3B60C28998A9408B /* Pods_Barrikade_iOSTests.framework */; };
 		8D3E56A4BD20863885993CF0 /* Pods_Barrikade_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547DF06FB3A9643EF6689758 /* Pods_Barrikade_iOS.framework */; };
+		A416901A1FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41690181FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.swift */; };
+		A416901B1FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41690191FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.xib */; };
 		A48DF6551FFB6580003C109F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6541FFB6580003C109F /* AppDelegate.swift */; };
 		A48DF66A1FFB6580003C109F /* Barrikade_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6691FFB6580003C109F /* Barrikade_iOSTests.swift */; };
 		A48DF6751FFB6580003C109F /* Barrikade_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6741FFB6580003C109F /* Barrikade_iOSUITests.swift */; };
@@ -53,6 +55,8 @@
 		547DF06FB3A9643EF6689758 /* Pods_Barrikade_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barrikade_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E20798C3B60C28998A9408B /* Pods_Barrikade_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barrikade_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		888930B68BB367C894C30F5D /* Pods-Barrikade-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOS/Pods-Barrikade-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		A41690181FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlitedNewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A41690191FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlitedNewsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A48DF6511FFB6580003C109F /* Barrikade-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barrikade-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48DF6541FFB6580003C109F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48DF6651FFB6580003C109F /* Barrikade-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barrikade-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +134,24 @@
 				186EB5EC3C01FD84488D5A19 /* Pods-Barrikade-iOSUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A41690161FFC456100EE3682 /* MainNews */ = {
+			isa = PBXGroup;
+			children = (
+				A41690171FFC457000EE3682 /* HighlitedNewsCollectionViewCell */,
+				A48DF6A11FFB69BD003C109F /* MainNewsViewController.swift */,
+			);
+			path = MainNews;
+			sourceTree = "<group>";
+		};
+		A41690171FFC457000EE3682 /* HighlitedNewsCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A41690181FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.swift */,
+				A41690191FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.xib */,
+			);
+			path = HighlitedNewsCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		A48DF6481FFB6580003C109F = {
@@ -228,8 +250,8 @@
 		A48DF69F1FFB69BD003C109F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A41690161FFC456100EE3682 /* MainNews */,
 				A48DF6A01FFB69BD003C109F /* Main.storyboard */,
-				A48DF6A11FFB69BD003C109F /* MainNewsViewController.swift */,
 				A48DF6A21FFB69BD003C109F /* NewsViewController.swift */,
 				A48DF6A31FFB69BD003C109F /* PageMenuViewController.swift */,
 			);
@@ -412,6 +434,7 @@
 			files = (
 				A48DF6B91FFB69BD003C109F /* LaunchScreen.storyboard in Resources */,
 				A48DF6B81FFB69BD003C109F /* Assets.xcassets in Resources */,
+				A416901B1FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.xib in Resources */,
 				A4E14AEB1FFBF8C8006A5F7E /* Colors.txt in Resources */,
 				A48DF6B41FFB69BD003C109F /* Main.storyboard in Resources */,
 				A4E14AEF1FFBFA1B006A5F7E /* LaunchScreen.storyboard in Resources */,
@@ -636,6 +659,7 @@
 				A48DF6B71FFB69BD003C109F /* PageMenuViewController.swift in Sources */,
 				A4E14AE81FFBF8C8006A5F7E /* Images.swift in Sources */,
 				A4E14AEA1FFBF8C8006A5F7E /* Strings.swift in Sources */,
+				A416901A1FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.swift in Sources */,
 				A4E14AE71FFBF8C8006A5F7E /* Colors.swift in Sources */,
 				A48DF6B61FFB69BD003C109F /* NewsViewController.swift in Sources */,
 				A48DF6B51FFB69BD003C109F /* MainNewsViewController.swift in Sources */,

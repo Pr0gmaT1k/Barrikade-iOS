@@ -1,5 +1,5 @@
 //
-//  MainNewsViewController.swift
+//  HighlitedNewsCollectionViewCell.swift
 //  Barrikade-iOS
 //
 //  Created by Pr0gmaT1K on 04/08/2017.
@@ -25,10 +25,13 @@
 import UIKit
 import Reusable
 
-final class MainNewsViewController: UIViewController, StoryboardBased {
+final class HighlitedNewsCollectionViewCell: UICollectionViewCell, NibReusable {
+  // Mark:- IBOutlet
+  @IBOutlet private weak var imageNews: UIImageView!
+  @IBOutlet private weak var titleNews: UILabel!
+  @IBOutlet private weak var subtitleNews: UILabel!
   
-  // Mark:- Public func
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  public func fill(viewModel: Any) {
+    // Do customization
   }
 }
