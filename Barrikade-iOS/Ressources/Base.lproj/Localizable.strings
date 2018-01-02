@@ -1,0 +1,9 @@
+////////////////////////////////////////////////////////////////////////////////
+// MARK: Main title
+"navbar_main_title" = "BARRIKADE";
+
+// MARK:- Page menu
+"page_menu_local_infos" = "INFOS LOCALES";
+"page_menu_analyses" = "ANALYSES";
+"page_menu_elsewhere" = "AILLEURS";
+"page_menu_guide" = "GUIDE PRATIQUE";
