@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Barrikade-iOS
 //
-//  Created by Pr0gmaT1k on 02/08/2017.
+//  Created by Pr0gmaT1k on 02/01/2018.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal

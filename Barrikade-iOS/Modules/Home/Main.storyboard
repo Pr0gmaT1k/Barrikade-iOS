@@ -64,16 +64,25 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c8Q-ev-5Wc">
+                                <rect key="frame" x="0.0" y="324.5" width="375" height="342.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="97D-Cn-Gca" firstAttribute="top" secondItem="c8Q-ev-5Wc" secondAttribute="bottom" id="3cN-DP-ho6"/>
                             <constraint firstItem="pnB-KC-C8h" firstAttribute="leading" secondItem="K5z-iz-fIX" secondAttribute="leading" id="8rN-iE-KMy"/>
+                            <constraint firstAttribute="trailing" secondItem="c8Q-ev-5Wc" secondAttribute="trailing" id="FmZ-Ew-WSM"/>
+                            <constraint firstItem="c8Q-ev-5Wc" firstAttribute="leading" secondItem="K5z-iz-fIX" secondAttribute="leading" id="KaD-6y-8aO"/>
                             <constraint firstAttribute="trailing" secondItem="pnB-KC-C8h" secondAttribute="trailing" id="PZJ-AG-W9C"/>
+                            <constraint firstItem="c8Q-ev-5Wc" firstAttribute="top" secondItem="pnB-KC-C8h" secondAttribute="bottom" id="veB-PF-P4J"/>
                             <constraint firstItem="pnB-KC-C8h" firstAttribute="top" secondItem="mSO-a7-rzx" secondAttribute="bottom" constant="10" id="yAx-17-WCQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="pnB-KC-C8h" id="89j-75-Jlp"/>
+                        <outlet property="tableView" destination="c8Q-ev-5Wc" id="7Iv-Hm-dLq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oaa-D7-7ad" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -2,7 +2,7 @@
 //  MainNewsViewController.swift
 //  Barrikade-iOS
 //
-//  Created by Pr0gmaT1K on 04/08/2017.
+//  Created by Pr0gmaT1K on 02/01/2018.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -28,9 +28,11 @@ import Reusable
 final class MainNewsViewController: UIViewController, StoryboardBased {
   // Mark:- IBOutlet
   @IBOutlet fileprivate weak var collectionView: UICollectionView!
+  @IBOutlet fileprivate weak var tableView: UITableView!
   
   // Mark:- Properties
   fileprivate var highlitedNews = ["", "", ""]
+  fileprivate var news = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
   fileprivate var previousOffSet: CGFloat = 0.0
   
   // Mark:- Public func
@@ -41,6 +43,12 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
     self.collectionView.register(cellType: HighlitedNewsCollectionViewCell.self)
+    
+    // tableView
+    self.tableView.dataSource = self
+    self.tableView.delegate = self
+    self.tableView.register(cellType: NewsTableViewCell.self)
+    self.tableView.rowHeight = 130
   }
 }
 
@@ -80,6 +88,10 @@ extension MainNewsViewController: UICollectionViewDelegateFlowLayout {
     self.previousOffSet = self.collectionView.contentOffset.x
   }
   
+  func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    // load news
+  }
+  
   // TODO: This is dirty. Found a better way to do a nice swipe.
   private func pagingScrollStrap() {
     let offset = self.collectionView.contentOffset.x
@@ -88,5 +100,21 @@ extension MainNewsViewController: UICollectionViewDelegateFlowLayout {
     let nextPage = round((offset / self.collectionView.frame.width) + adapter)
     let index = IndexPath(row: Int(nextPage), section: 0)
     self.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+  }
+}
+
+// Mark:- UITableView Delegate & DataSource
+extension MainNewsViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.news.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = self.tableView.dequeueReusableCell(for: indexPath) as NewsTableViewCell
+    return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // Load news
   }
 }
