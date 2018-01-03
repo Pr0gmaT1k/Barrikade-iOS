@@ -48,7 +48,7 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
     self.tableView.dataSource = self
     self.tableView.delegate = self
     self.tableView.register(cellType: NewsTableViewCell.self)
-    self.tableView.rowHeight = 130
+    self.tableView.rowHeight = 150
   }
 }
 
