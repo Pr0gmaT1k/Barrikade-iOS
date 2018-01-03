@@ -28,40 +28,55 @@
                 <rect key="frame" x="0.0" y="0.0" width="361" height="354"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kJn-Xi-rcR">
-                        <rect key="frame" x="0.0" y="0.0" width="361" height="202.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFY-SZ-mKY">
+                        <rect key="frame" x="5" y="5" width="351" height="344"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foo" translatesAutoresizingMaskIntoConstraints="NO" id="kJn-Xi-rcR">
+                                <rect key="frame" x="0.0" y="0.0" width="351" height="197"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kJn-Xi-rcR" secondAttribute="height" multiplier="710:398" id="0bO-J6-ToN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wie die letzten paar Jahre haben wir uns mit Musik und Tanz die Strassen Basels genommen, um ein neues Jahr einzuläuten." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4Y-sy-hoP">
+                                <rect key="frame" x="15" y="237" width="321" height="102"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Viva l’Utopia - Tanzumzug für ein widerständiges Jahr 2018" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kuo-mF-r2i">
+                                <rect key="frame" x="15" y="202" width="321" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="kJn-Xi-rcR" secondAttribute="height" multiplier="710:398" id="0bO-J6-ToN"/>
+                            <constraint firstAttribute="bottom" secondItem="U4Y-sy-hoP" secondAttribute="bottom" constant="5" id="1XP-4l-MUK"/>
+                            <constraint firstAttribute="trailing" secondItem="U4Y-sy-hoP" secondAttribute="trailing" constant="15" id="9Z7-3l-mwI"/>
+                            <constraint firstItem="U4Y-sy-hoP" firstAttribute="leading" secondItem="cFY-SZ-mKY" secondAttribute="leading" constant="15" id="KQD-ie-kkY"/>
+                            <constraint firstItem="kJn-Xi-rcR" firstAttribute="leading" secondItem="cFY-SZ-mKY" secondAttribute="leading" id="Nhs-q5-8sc"/>
+                            <constraint firstAttribute="trailing" secondItem="Kuo-mF-r2i" secondAttribute="trailing" constant="15" id="QM8-Rd-YnY"/>
+                            <constraint firstItem="U4Y-sy-hoP" firstAttribute="top" secondItem="Kuo-mF-r2i" secondAttribute="bottom" constant="5" id="Rxs-eZ-Hjy"/>
+                            <constraint firstItem="Kuo-mF-r2i" firstAttribute="top" secondItem="kJn-Xi-rcR" secondAttribute="bottom" constant="5" id="lb7-EN-NDd"/>
+                            <constraint firstItem="kJn-Xi-rcR" firstAttribute="top" secondItem="cFY-SZ-mKY" secondAttribute="top" id="pvG-MN-c4I"/>
+                            <constraint firstAttribute="trailing" secondItem="kJn-Xi-rcR" secondAttribute="trailing" id="uF4-Rj-fXd"/>
+                            <constraint firstItem="Kuo-mF-r2i" firstAttribute="leading" secondItem="cFY-SZ-mKY" secondAttribute="leading" constant="15" id="zj7-Gc-zkG"/>
                         </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kuo-mF-r2i">
-                        <rect key="frame" x="15" y="207.5" width="331" height="17.5"/>
-                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4Y-sy-hoP">
-                        <rect key="frame" x="15" y="230" width="331" height="16.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Kuo-mF-r2i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="2Mm-Eg-BV9"/>
-                <constraint firstAttribute="trailing" secondItem="kJn-Xi-rcR" secondAttribute="trailing" id="7M2-cL-hNC"/>
-                <constraint firstItem="U4Y-sy-hoP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="C2W-K8-DN5"/>
-                <constraint firstItem="Kuo-mF-r2i" firstAttribute="top" secondItem="kJn-Xi-rcR" secondAttribute="bottom" constant="5" id="K12-Ai-Zv0"/>
-                <constraint firstItem="kJn-Xi-rcR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XNJ-Rt-ET5"/>
-                <constraint firstItem="kJn-Xi-rcR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cca-WH-88F"/>
-                <constraint firstAttribute="trailing" secondItem="Kuo-mF-r2i" secondAttribute="trailing" constant="15" id="kjs-nW-Jhy"/>
-                <constraint firstAttribute="trailing" secondItem="U4Y-sy-hoP" secondAttribute="trailing" constant="15" id="lKm-dP-ThL"/>
-                <constraint firstItem="U4Y-sy-hoP" firstAttribute="top" secondItem="Kuo-mF-r2i" secondAttribute="bottom" constant="5" id="rit-IZ-Mxw"/>
+                <constraint firstItem="cFY-SZ-mKY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="1li-Xp-Ge5"/>
+                <constraint firstItem="cFY-SZ-mKY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="T65-nG-SiX"/>
+                <constraint firstAttribute="trailing" secondItem="cFY-SZ-mKY" secondAttribute="trailing" constant="5" id="afQ-JV-qSA"/>
+                <constraint firstAttribute="bottom" secondItem="cFY-SZ-mKY" secondAttribute="bottom" constant="5" id="g3r-UT-939"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="361" height="354"/>
             <connections>
+                <outlet property="countainerView" destination="cFY-SZ-mKY" id="dtk-aK-b3x"/>
                 <outlet property="imageNews" destination="kJn-Xi-rcR" id="JX5-3z-pi1"/>
                 <outlet property="subtitleNews" destination="U4Y-sy-hoP" id="LF8-jd-s5m"/>
                 <outlet property="titleNews" destination="Kuo-mF-r2i" id="7lM-Jj-qSs"/>
@@ -69,4 +84,7 @@
             <point key="canvasLocation" x="189.5" y="206"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="foo" width="960" height="600"/>
+    </resources>
 </document>

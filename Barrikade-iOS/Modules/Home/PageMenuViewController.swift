@@ -39,7 +39,6 @@ final class PageMenuViewController: UIViewController {
     
     let mainNewsVC = StoryboardScene.Main.mainNewsViewController.instantiate()
     mainNewsVC.title = L10n.pageMenuAktuel
-    mainNewsVC.view.backgroundColor = UIColor.gray
     
     let localInfosVC = StoryboardScene.Main.newsViewController.instantiate()
     localInfosVC.title = L10n.pageMenuLocalInfos

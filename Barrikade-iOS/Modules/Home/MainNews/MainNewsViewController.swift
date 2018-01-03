@@ -31,6 +31,7 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
   
   // Mark:- Properties
   fileprivate var highlitedNews = ["", "", ""]
+  fileprivate var previousOffSet: CGFloat = 0.0
   
   // Mark:- Public func
   override func viewDidLoad() {
@@ -43,7 +44,9 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
   }
 }
 
-extension MainNewsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+// Mark:- UICollectionViewDataSource
+extension MainNewsViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return self.highlitedNews.count
   }
@@ -51,5 +54,39 @@ extension MainNewsViewController: UICollectionViewDelegate, UICollectionViewData
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = self.collectionView.dequeueReusableCell(for: indexPath) as HighlitedNewsCollectionViewCell
     return cell
+  }
+}
+
+// Mark:- UICollectionViewDelegateFlowLayout
+extension MainNewsViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let cellwidth = self.collectionView.bounds.size.width - 30
+    return CGSize(width: cellwidth, height: cellwidth  * 5 / 6)
+  }
+  
+  func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    self.pagingScrollStrap()
+  }
+  
+  func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+    self.pagingScrollStrap()
+  }
+  
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    self.previousOffSet = self.collectionView.contentOffset.x
+  }
+  
+  // TODO: This is dirty. Found a better way to do a nice swipe.
+  private func pagingScrollStrap() {
+    let offset = self.collectionView.contentOffset.x
+    let direction = offset - previousOffSet
+    let adapter: CGFloat = direction > 0 ? 0.55 : -0.45
+    let nextPage = round((offset / self.collectionView.frame.width) + adapter)
+    let index = IndexPath(row: Int(nextPage), section: 0)
+    self.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
   }
 }

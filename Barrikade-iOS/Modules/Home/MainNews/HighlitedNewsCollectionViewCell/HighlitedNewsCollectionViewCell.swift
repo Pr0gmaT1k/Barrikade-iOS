@@ -27,9 +27,16 @@ import Reusable
 
 final class HighlitedNewsCollectionViewCell: UICollectionViewCell, NibReusable {
   // Mark:- IBOutlet
+  @IBOutlet private weak var countainerView: UIView!
   @IBOutlet private weak var imageNews: UIImageView!
   @IBOutlet private weak var titleNews: UILabel!
   @IBOutlet private weak var subtitleNews: UILabel!
+  
+  // Mark:- func
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    self.countainerView.layer.shadowOpacity = 0.2
+  }
   
   public func fill(viewModel: Any) {
     // Do customization
