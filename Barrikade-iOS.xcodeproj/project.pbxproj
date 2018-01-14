@@ -29,6 +29,7 @@
 		A4A12D63200BD28E00C6B5E0 /* NewsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A12D60200BD28E00C6B5E0 /* NewsMapper.swift */; };
 		A4A12D64200BD28E00C6B5E0 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A12D61200BD28E00C6B5E0 /* DataMapper.swift */; };
 		A4A12D68200BD4CF00C6B5E0 /* BarrikadeWSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A12D67200BD4CF00C6B5E0 /* BarrikadeWSClient.swift */; };
+		A4A12D6A200BD7DC00C6B5E0 /* BarrikadeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A12D69200BD7DC00C6B5E0 /* BarrikadeRoute.swift */; };
 		A4E14AE11FFBF7AF006A5F7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E14AE01FFBF7AF006A5F7E /* Default-568h@2x.png */; };
 		A4E14AE71FFBF8C8006A5F7E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E14AE21FFBF8C8006A5F7E /* Colors.swift */; };
 		A4E14AE81FFBF8C8006A5F7E /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E14AE31FFBF8C8006A5F7E /* Images.swift */; };
@@ -89,6 +90,7 @@
 		A4A12D60200BD28E00C6B5E0 /* NewsMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsMapper.swift; sourceTree = "<group>"; };
 		A4A12D61200BD28E00C6B5E0 /* DataMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
 		A4A12D67200BD4CF00C6B5E0 /* BarrikadeWSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrikadeWSClient.swift; sourceTree = "<group>"; };
+		A4A12D69200BD7DC00C6B5E0 /* BarrikadeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrikadeRoute.swift; sourceTree = "<group>"; };
 		A4E14AE01FFBF7AF006A5F7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A4E14AE21FFBF8C8006A5F7E /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A4E14AE31FFBF8C8006A5F7E /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				A4A12D67200BD4CF00C6B5E0 /* BarrikadeWSClient.swift */,
+				A4A12D69200BD7DC00C6B5E0 /* BarrikadeRoute.swift */,
 			);
 			path = Barrikade.info;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				A4A12D62200BD28E00C6B5E0 /* PaginationMapper.swift in Sources */,
 				A4A12D64200BD28E00C6B5E0 /* DataMapper.swift in Sources */,
 				A4A12D5E200BD28700C6B5E0 /* Data.swift in Sources */,
+				A4A12D6A200BD7DC00C6B5E0 /* BarrikadeRoute.swift in Sources */,
 				A48DF6B51FFB69BD003C109F /* MainNewsViewController.swift in Sources */,
 				A4A12D5D200BD28700C6B5E0 /* Pagination.swift in Sources */,
 				A48DF6551FFB6580003C109F /* AppDelegate.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  BarrikadeWSClient.swift
+//  BarrikadeRoute.swift
 //  Barrikade-iOS
 //
 //  Created by Pr0gmaT1K on 02/01/2018.
@@ -22,27 +22,14 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import RxSwift
-import Alamofire
 import NetworkStack
 
-final class BarrikadeWSClient {
-  // MARK: - Properties
-  static let baseURL = "https://barrikade.info/"
-  private static let appName = "barrikade_info"
-  private static let keychainService = KeychainService(serviceType: BarrikadeWSClient.appName)
-  private static let networkStack = NetworkStack(baseURL: BarrikadeWSClient.baseURL, keychainService: keychainService)
+public enum BarrikadeRoute: Routable {
+  case articleCollection(startAt: Int)
 
-
-  // Mark:- Services
-  func getNews(startAt: Int) -> Observable<Void> {
-    print(BarrikadeRoute.articleCollection(startAt: 0).path)
-    let requestParameters = RequestParameters(method: .get,
-                                              route: BarrikadeRoute.articleCollection(startAt: startAt))
-
-    return BarrikadeWSClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
-      .map({ (_, json) -> Void in
-        print(json)
-      })
+  public var path: String {
+    switch self {
+    case .articleCollection(startAt: let startAt): return "?page=articleCollection&debut_articles=" + startAt.description
+    }
   }
 }
