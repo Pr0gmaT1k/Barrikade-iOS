@@ -7,6 +7,7 @@ target ‘Barrikade-iOS' do
   pod 'RealmSwift'
   pod 'Reusable'
   pod 'PageMenu'
+  pod 'ObjectMapper'
 
   target 'Barrikade-iOSTests' do
     inherit! :search_paths
