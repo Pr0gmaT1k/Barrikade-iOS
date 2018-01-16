@@ -20,6 +20,9 @@ brew install swiftgen
 pod install
 ```
 
+### Demo
+![Demo](https://raw.githubusercontent.com/Pr0gmaT1k/Barrikade-iOS/master/Presentation.gif)
+
 ### License
 
 Barrikade-iOS is released under the MIT license.
