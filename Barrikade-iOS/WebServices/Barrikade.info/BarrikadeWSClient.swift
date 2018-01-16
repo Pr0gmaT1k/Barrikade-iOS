@@ -2,7 +2,7 @@
 //  BarrikadeWSClient.swift
 //  Barrikade-iOS
 //
-//  Created by Pr0gmaT1K on 02/01/2018.
+//  Created by Pr0gmaT1K on 18/01/2018.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,7 @@
 import RxSwift
 import Alamofire
 import NetworkStack
+import ObjectMapper
 
 final class BarrikadeWSClient {
   // MARK: - Properties
@@ -42,7 +43,8 @@ final class BarrikadeWSClient {
 
     return BarrikadeWSClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
       .map({ (_, json) -> Void in
-        print(json)
+        let articleCollection = Mapper<ArticleCollection>().map(JSONObject: json)
+        print(articleCollection)
       })
   }
 }

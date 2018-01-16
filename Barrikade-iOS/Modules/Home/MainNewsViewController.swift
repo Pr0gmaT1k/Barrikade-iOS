@@ -53,15 +53,15 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
     self.tableView.register(cellType: NewsTableViewCell.self)
     self.tableView.rowHeight = 150
 
-    barrikadeWSClient.getNews(startAt: 0)
-    .observeOn(MainScheduler.instance)
-    .subscribe { event in
-      switch event {
-      case .completed: break
-      case .next: break
-      case .error(let error): print(error.localizedDescription)
-      }
-    }.addDisposableTo(disposeBag)
+//    barrikadeWSClient.getNews(startAt: 0)
+//    .observeOn(MainScheduler.instance)
+//    .subscribe { event in
+//      switch event {
+//      case .completed: break
+//      case .next: break
+//      case .error(let error): print(error.localizedDescription)
+//      }
+//    }.addDisposableTo(disposeBag)
   }
 }
 

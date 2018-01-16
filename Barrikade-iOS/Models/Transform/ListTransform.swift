@@ -1,8 +1,8 @@
 //
-//  BarrikadeRoute.swift
+//  ListTransform.swift
 //  Barrikade-iOS
 //
-//  Created by Pr0gmaT1K on 18/01/2018.
+//  Created by Pr0gmaT1K on on 14/01/2018.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,14 +22,36 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import NetworkStack
+import ObjectMapper
+import RealmSwift
 
-public enum BarrikadeRoute: Routable {
-  case articleCollection(startAt: Int)
+class ListTransform<T: RealmSwift.Object> : TransformType where T: Mappable {
+  typealias Object = List<T>
+  typealias JSON = [AnyObject]
 
-  public var path: String {
-    switch self {
-    case .articleCollection(startAt: let startAt): return "?page=articleCollection&debut_articles=" + startAt.description
+  let mapper = Mapper<T>()
+
+  func transformFromJSON(_ value: Any?) -> List<T>? {
+    let results = List<T>()
+    if let value = value as? [AnyObject] {
+      for json in value {
+        if let obj = mapper.map(JSONObject: json) {
+          results.append(obj)
+        }
+      }
     }
+    return results
+  }
+
+  func transformToJSON(_ value: Object?) -> [AnyObject]? {
+    var results = [AnyObject]()
+    if let value = value {
+      for obj in value {
+        let json = mapper.toJSON(obj)
+        results.append(json as AnyObject)
+      }
+    }
+    return results
   }
 }
+
