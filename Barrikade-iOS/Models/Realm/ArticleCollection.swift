@@ -10,7 +10,7 @@ final class ArticleCollection: Object {
     case pagination = "pagination"
   }
 
-  dynamic var data: News?
+  var data = List<News>()
   dynamic var pagination: Pagination?
 
 }

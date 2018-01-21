@@ -13,7 +13,7 @@ extension ArticleCollection: Mappable {
   func mapping(map: Map) {
 
     // MARK: Relationships
-    self.data <- map["data"]
+    self.data <- (map["data"], ListTransform<News>())
     self.pagination <- map["pagination"]
   }
 }
