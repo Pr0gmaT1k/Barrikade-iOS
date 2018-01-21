@@ -28,23 +28,22 @@ import NetworkStack
 import ObjectMapper
 
 final class BarrikadeWSClient {
-  // MARK: - Properties
-  static let baseURL = "https://barrikade.info/"
-  private static let appName = "barrikade_info"
-  private static let keychainService = KeychainService(serviceType: BarrikadeWSClient.appName)
-  private static let networkStack = NetworkStack(baseURL: BarrikadeWSClient.baseURL, keychainService: keychainService)
+    // MARK: - Properties
+    static let baseURL = "https://barrikade.info/"
+    private static let appName = "barrikade_info"
+    private static let keychainService = KeychainService(serviceType: BarrikadeWSClient.appName)
+    private static let networkStack = NetworkStack(baseURL: BarrikadeWSClient.baseURL, keychainService: keychainService)
 
+    // Mark:- Services
+    func getNews(startAt: Int) -> Observable<Void> {
+        print(BarrikadeRoute.articleCollection(startAt: 0).path)
+        let requestParameters = RequestParameters(method: .get,
+                                                  route: BarrikadeRoute.articleCollection(startAt: startAt))
 
-  // Mark:- Services
-  func getNews(startAt: Int) -> Observable<Void> {
-    print(BarrikadeRoute.articleCollection(startAt: 0).path)
-    let requestParameters = RequestParameters(method: .get,
-                                              route: BarrikadeRoute.articleCollection(startAt: startAt))
+        return BarrikadeWSClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
+            .map({ (_, json) -> Void in
+                let articleCollection = Mapper<ArticleCollection>().map(JSONObject: json)
 
-    return BarrikadeWSClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
-      .map({ (_, json) -> Void in
-        let articleCollection = Mapper<ArticleCollection>().map(JSONObject: json)
-        print(articleCollection)
-      })
-  }
+            })
+    }
 }

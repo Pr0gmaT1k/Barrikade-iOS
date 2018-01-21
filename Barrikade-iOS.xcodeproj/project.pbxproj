@@ -247,16 +247,8 @@
 				A4A12D6F200BE6D400C6B5E0 /* Transform */,
 				A48DF69C1FFB69BD003C109F /* Realm */,
 				A4A12D54200BC86A00C6B5E0 /* Mapper */,
-				A48DF69B1FFB69BD003C109F /* Extensions */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		A48DF69B1FFB69BD003C109F /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A48DF69C1FFB69BD003C109F /* Realm */ = {

@@ -24,12 +24,10 @@
 
 import UIKit
 
-
 import RealmSwift
 import RxSwift
 
 extension Realm {
-
     static func safeInstance() -> Realm {
         do {
             return try Realm()
