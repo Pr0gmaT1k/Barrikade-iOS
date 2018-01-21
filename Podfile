@@ -8,6 +8,7 @@ target ‘Barrikade-iOS' do
   pod 'Reusable'
   pod 'PageMenu'
   pod 'ObjectMapper'
+  pod 'SwiftyUserDefaults'
 
   target 'Barrikade-iOSTests' do
     inherit! :search_paths

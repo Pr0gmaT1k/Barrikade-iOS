@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E1BC75BB1187CDBB226A2C93A5AF301D"
-               BuildableName = "Pods_Barrikade_iOS.framework"
-               BlueprintName = "Pods-Barrikade-iOS"
+               BlueprintIdentifier = "C9C5F382EB7224C56EA9BF480C06A79C"
+               BuildableName = "SwiftyUserDefaults.framework"
+               BlueprintName = "SwiftyUserDefaults"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E1BC75BB1187CDBB226A2C93A5AF301D"
-            BuildableName = "Pods_Barrikade_iOS.framework"
-            BlueprintName = "Pods-Barrikade-iOS"
+            BlueprintIdentifier = "C9C5F382EB7224C56EA9BF480C06A79C"
+            BuildableName = "SwiftyUserDefaults.framework"
+            BlueprintName = "SwiftyUserDefaults"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

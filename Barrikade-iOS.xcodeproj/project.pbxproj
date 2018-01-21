@@ -39,6 +39,7 @@
 		A4E14AEB1FFBF8C8006A5F7E /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4E14AE61FFBF8C8006A5F7E /* Colors.txt */; };
 		A4E14AEF1FFBFA1B006A5F7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E14AED1FFBFA1B006A5F7E /* LaunchScreen.storyboard */; };
 		A4E14AF21FFBFA5D006A5F7E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4E14AF01FFBFA5D006A5F7E /* Localizable.strings */; };
+		A4F82D572014FCB700E4C0F3 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F82D562014FCB700E4C0F3 /* Realm.swift */; };
 		D1F7BB9BCF46C0A323BBB5A1 /* Pods_Barrikade_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B75FABA7C6769370BD4392D /* Pods_Barrikade_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		A4E14AEE1FFBFA1B006A5F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4E14AF11FFBFA5D006A5F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
 		A4E14AF31FFC05C7006A5F7E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4F82D562014FCB700E4C0F3 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		BF0AF8531A7F92F16BE049CF /* Pods-Barrikade-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOS/Pods-Barrikade-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CA0DB059944325E13679F613 /* Pods-Barrikade-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOSUITests/Pods-Barrikade-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D14FCE207A1884CFACBE61D8 /* Pods-Barrikade-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOSTests/Pods-Barrikade-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		A48DF69D1FFB69BD003C109F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A4F82D562014FCB700E4C0F3 /* Realm.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -640,6 +644,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -747,6 +752,7 @@
 				A4A12D6C200BE5D600C6B5E0 /* ArticleCollection.swift in Sources */,
 				A4A12D6A200BD7DC00C6B5E0 /* BarrikadeRoute.swift in Sources */,
 				A4A12D6E200BE5DB00C6B5E0 /* ArticleCollectionMapper.swift in Sources */,
+				A4F82D572014FCB700E4C0F3 /* Realm.swift in Sources */,
 				A48DF6B51FFB69BD003C109F /* MainNewsViewController.swift in Sources */,
 				A4A12D5D200BD28700C6B5E0 /* Pagination.swift in Sources */,
 				A48DF6551FFB6580003C109F /* AppDelegate.swift in Sources */,

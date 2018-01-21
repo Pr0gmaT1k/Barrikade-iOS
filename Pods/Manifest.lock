@@ -18,6 +18,7 @@ PODS:
   - Reusable/Storyboard (4.0.0)
   - Reusable/View (4.0.0)
   - RxSwift (3.6.1)
+  - SwiftyUserDefaults (3.0.0)
 
 DEPENDENCIES:
   - NetworkStack
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - PageMenu
   - RealmSwift
   - Reusable
+  - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
@@ -36,7 +38,8 @@ SPEC CHECKSUMS:
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: 643b5179de3de12b7b3238f9e776f293a03f625e
+PODFILE CHECKSUM: e91861cb4eb7706916321c31cbaf0a4c1d210e6f
 
 COCOAPODS: 1.3.1
