@@ -13,6 +13,7 @@
 		A416901B1FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41690191FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.xib */; };
 		A416901F1FFC59D600EE3682 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A416901D1FFC59D600EE3682 /* NewsTableViewCell.swift */; };
 		A41690201FFC59D600EE3682 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A416901E1FFC59D600EE3682 /* NewsTableViewCell.xib */; };
+		A45C2BFD20226047003D44A4 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C2BFC20226047003D44A4 /* Synchronizer.swift */; };
 		A48DF6551FFB6580003C109F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6541FFB6580003C109F /* AppDelegate.swift */; };
 		A48DF66A1FFB6580003C109F /* Barrikade_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6691FFB6580003C109F /* Barrikade_iOSTests.swift */; };
 		A48DF6751FFB6580003C109F /* Barrikade_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6741FFB6580003C109F /* Barrikade_iOSUITests.swift */; };
@@ -71,6 +72,7 @@
 		A41690191FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlitedNewsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A416901D1FFC59D600EE3682 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		A416901E1FFC59D600EE3682 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		A45C2BFC20226047003D44A4 /* Synchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
 		A48DF6511FFB6580003C109F /* Barrikade-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barrikade-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48DF6541FFB6580003C109F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48DF6651FFB6580003C109F /* Barrikade-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barrikade-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -360,6 +362,7 @@
 			children = (
 				A4A12D67200BD4CF00C6B5E0 /* BarrikadeWSClient.swift */,
 				A4A12D69200BD7DC00C6B5E0 /* BarrikadeRoute.swift */,
+				A45C2BFC20226047003D44A4 /* Synchronizer.swift */,
 			);
 			path = Barrikade.info;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				A4A12D5C200BD28700C6B5E0 /* News.swift in Sources */,
 				A48DF6B61FFB69BD003C109F /* NewsViewController.swift in Sources */,
 				A4A12D71200BE6E700C6B5E0 /* ListTransform.swift in Sources */,
+				A45C2BFD20226047003D44A4 /* Synchronizer.swift in Sources */,
 				A4A12D62200BD28E00C6B5E0 /* PaginationMapper.swift in Sources */,
 				A4A12D6C200BE5D600C6B5E0 /* ArticleCollection.swift in Sources */,
 				A4A12D6A200BD7DC00C6B5E0 /* BarrikadeRoute.swift in Sources */,

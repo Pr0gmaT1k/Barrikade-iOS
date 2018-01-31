@@ -36,8 +36,6 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
     fileprivate var highlitedNews = ["", "", ""]
     fileprivate var news = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
     fileprivate var previousOffSet: CGFloat = 0.0
-    private let barrikadeWSClient =  BarrikadeWSClient()
-    private let disposeBag = DisposeBag()
 
     // Mark:- Public func
     override func viewDidLoad() {
@@ -53,16 +51,6 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
         self.tableView.delegate = self
         self.tableView.register(cellType: NewsTableViewCell.self)
         self.tableView.rowHeight = 150
-
-        barrikadeWSClient.getNews(startAt: 0)
-            .observeOn(MainScheduler.instance)
-            .subscribe { event in
-                switch event {
-                case .completed: break
-                case .next: break
-                case .error(let error): print(error.localizedDescription)
-                }
-            }.addDisposableTo(disposeBag)
     }
 }
 

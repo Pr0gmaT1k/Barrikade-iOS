@@ -26,6 +26,7 @@ import RxSwift
 import Alamofire
 import NetworkStack
 import ObjectMapper
+import RealmSwift
 
 final class BarrikadeWSClient {
     // MARK: - Properties
@@ -35,15 +36,13 @@ final class BarrikadeWSClient {
     private static let networkStack = NetworkStack(baseURL: BarrikadeWSClient.baseURL, keychainService: keychainService)
 
     // Mark:- Services
-    func getNews(startAt: Int) -> Observable<Void> {
-        print(BarrikadeRoute.articleCollection(startAt: 0).path)
+    func getNews(startAt: Int) -> Observable<ArticleCollection?> {
         let requestParameters = RequestParameters(method: .get,
                                                   route: BarrikadeRoute.articleCollection(startAt: startAt))
 
         return BarrikadeWSClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
-            .map({ (_, json) -> Void in
-                let articleCollection = Mapper<ArticleCollection>().map(JSONObject: json)
-
-            })
+            .map { (_, json) -> ArticleCollection? in
+                return Mapper<ArticleCollection>().map(JSONObject: json)
+            }
     }
 }
