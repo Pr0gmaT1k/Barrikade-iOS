@@ -1,8 +1,8 @@
 //
-//  NewsTableViewCell.swift
+//  String+HTML.swift
 //  Barrikade-iOS
 //
-//  Created by Pr0gmaT1K on on 03/01/2018.
+//  Created by Pr0gmaT1K on 18/01/2018.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,27 +22,14 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import UIKit
-import Reusable
-import Kingfisher
-
-final class NewsTableViewCell: UITableViewCell, NibReusable {
-    // Mark:- IBOutlet
-    @IBOutlet private weak var countainerView: UIView!
-    @IBOutlet private weak var imageNews: UIImageView!
-    @IBOutlet private weak var titleNews: UILabel!
-    @IBOutlet private weak var subtitleNews: UILabel!
-
-    // Mark:- func
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.countainerView.layer.shadowOpacity = 0.2
+extension String {
+    var removeHTMLParagraph: String {
+        return self.replacingOccurrences(of: "<p>", with: "").replacingOccurrences(of: "</p>", with: "")
     }
 
-    public func fill(news: News) {
-        self.titleNews.text = news.title
-        self.subtitleNews.text = news.descriptionn?.removeBarrikadeSpecific
-        guard let urlString = news.logo, let url = URL(string: urlString) else { return }
-        self.imageNews.kf.setImage(with: url)
+    var removeBarrikadeSpecific: String {
+        return self.removeHTMLParagraph.replacingOccurrences(of: "<br class='autobr' />", with: "")
+                                       .replacingOccurrences(of: "<strong>", with: "")
+                                       .replacingOccurrences(of: "</strong>", with: "")
     }
 }

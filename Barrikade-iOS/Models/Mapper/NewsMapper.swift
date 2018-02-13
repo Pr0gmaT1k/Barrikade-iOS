@@ -14,10 +14,10 @@ extension News: Mappable {
     // MARK: Attributes
     self.chapo <- map["chapo"]
     self.date <- map["date"]
-    self.descriptionn <- map["descriptionn"]
+    self.descriptionn <- map["description"]
     self.id <- map["id"]
     self.logo <- map["logo"]
-    self.selff <- map["selff"]
+    self.selff <- map["self"]
     self.soustitre <- map["soustitre"]
     self.surtitre <- map["surtitre"]
     self.texte <- map["texte"]

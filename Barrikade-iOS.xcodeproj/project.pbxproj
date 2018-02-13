@@ -14,6 +14,7 @@
 		A416901F1FFC59D600EE3682 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A416901D1FFC59D600EE3682 /* NewsTableViewCell.swift */; };
 		A41690201FFC59D600EE3682 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A416901E1FFC59D600EE3682 /* NewsTableViewCell.xib */; };
 		A45C2BFD20226047003D44A4 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C2BFC20226047003D44A4 /* Synchronizer.swift */; };
+		A47A32CE2033A3900067B88D /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A32CD2033A3900067B88D /* String+HTML.swift */; };
 		A48DF6551FFB6580003C109F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6541FFB6580003C109F /* AppDelegate.swift */; };
 		A48DF66A1FFB6580003C109F /* Barrikade_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6691FFB6580003C109F /* Barrikade_iOSTests.swift */; };
 		A48DF6751FFB6580003C109F /* Barrikade_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6741FFB6580003C109F /* Barrikade_iOSUITests.swift */; };
@@ -73,6 +74,7 @@
 		A416901D1FFC59D600EE3682 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		A416901E1FFC59D600EE3682 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		A45C2BFC20226047003D44A4 /* Synchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
+		A47A32CD2033A3900067B88D /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 		A48DF6511FFB6580003C109F /* Barrikade-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barrikade-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48DF6541FFB6580003C109F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48DF6651FFB6580003C109F /* Barrikade-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barrikade-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				A4F82D562014FCB700E4C0F3 /* Realm.swift */,
+				A47A32CD2033A3900067B88D /* String+HTML.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4A12D63200BD28E00C6B5E0 /* NewsMapper.swift in Sources */,
+				A47A32CE2033A3900067B88D /* String+HTML.swift in Sources */,
 				A48DF6B71FFB69BD003C109F /* PageMenuViewController.swift in Sources */,
 				A4E14AE81FFBF8C8006A5F7E /* Images.swift in Sources */,
 				A416901F1FFC59D600EE3682 /* NewsTableViewCell.swift in Sources */,

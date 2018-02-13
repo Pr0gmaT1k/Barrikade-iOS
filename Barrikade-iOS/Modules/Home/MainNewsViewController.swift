@@ -52,7 +52,8 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(cellType: NewsTableViewCell.self)
-        self.tableView.rowHeight = 150
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 150
     }
 }
 

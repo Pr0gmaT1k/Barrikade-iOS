@@ -9,7 +9,7 @@ target ‘Barrikade-iOS' do
   pod 'PageMenu'
   pod 'ObjectMapper'
   pod 'Kingfisher'
-  pod 'HTMLString'
+  pod 'HTMLString', '~> 4.0'
 
   target 'Barrikade-iOSTests' do
     inherit! :search_paths
