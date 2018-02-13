@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C68CB8EF05A953C35BDD68EF482F1303'
-               BlueprintName = 'Reusable'
+               BlueprintIdentifier = '76F2E925AD1762D1C52939ED77C55036'
+               BlueprintName = 'HTMLString'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Reusable.framework'>
+               BuildableName = 'HTMLString.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
