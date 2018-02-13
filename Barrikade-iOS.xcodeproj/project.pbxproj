@@ -219,7 +219,6 @@
 				A48DF69A1FFB69BD003C109F /* Models */,
 				A48DF69E1FFB69BD003C109F /* Modules */,
 				A48DF6A41FFB69BD003C109F /* Ressources */,
-				A48DF6B11FFB69BD003C109F /* Services */,
 				A48DF6541FFB6580003C109F /* AppDelegate.swift */,
 			);
 			path = "Barrikade-iOS";
@@ -314,29 +313,6 @@
 				A4E14AE51FFBF8C8006A5F7E /* Strings.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		A48DF6B11FFB69BD003C109F /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				A48DF6B21FFB69BD003C109F /* Serialization */,
-				A48DF6B31FFB69BD003C109F /* WebService */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		A48DF6B21FFB69BD003C109F /* Serialization */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Serialization;
-			sourceTree = "<group>";
-		};
-		A48DF6B31FFB69BD003C109F /* WebService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WebService;
 			sourceTree = "<group>";
 		};
 		A4A12D54200BC86A00C6B5E0 /* Mapper */ = {

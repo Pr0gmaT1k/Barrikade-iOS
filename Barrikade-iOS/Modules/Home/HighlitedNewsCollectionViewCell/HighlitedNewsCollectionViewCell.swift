@@ -38,7 +38,8 @@ final class HighlitedNewsCollectionViewCell: UICollectionViewCell, NibReusable {
         self.countainerView.layer.shadowOpacity = 0.2
     }
 
-    public func fill(viewModel: Any) {
-        // Do customization
+    public func fill(news: News) {
+        self.titleNews.text = news.title
+        self.subtitleNews.text = news.chapo
     }
 }

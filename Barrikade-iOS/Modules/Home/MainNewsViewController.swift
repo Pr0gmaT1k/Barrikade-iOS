@@ -34,12 +34,14 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
 
     // Mark:- Properties
     fileprivate var highlitedNews = ["", "", ""]
-    fileprivate var news = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+    fileprivate var news = [News]()
     fileprivate var previousOffSet: CGFloat = 0.0
 
     // Mark:- Public func
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        news = Realm.safeInstance().objects(News.self).flatMap { $0 }
 
         // collectionView
         self.collectionView.dataSource = self
@@ -63,6 +65,7 @@ extension MainNewsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(for: indexPath) as HighlitedNewsCollectionViewCell
+//        cell.fill(news: news[indexPath.row])
         return cell
     }
 }
@@ -113,6 +116,7 @@ extension MainNewsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(for: indexPath) as NewsTableViewCell
+        cell.fill(news: news[indexPath.row])
         return cell
     }
 
