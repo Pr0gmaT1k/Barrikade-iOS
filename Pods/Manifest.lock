@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.5.1)
   - KeychainAccess (3.1.0)
+  - Kingfisher (4.1.0)
   - NetworkStack (0.1.5):
     - Alamofire (~> 4.0)
     - KeychainAccess (~> 3.0)
@@ -20,6 +21,7 @@ PODS:
   - RxSwift (3.6.1)
 
 DEPENDENCIES:
+  - Kingfisher
   - NetworkStack
   - ObjectMapper
   - PageMenu
@@ -29,6 +31,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
+  Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
   NetworkStack: 9dcf6c7cfce50111b2ef73963357638baa5fac7d
   ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
   PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
@@ -37,6 +40,6 @@ SPEC CHECKSUMS:
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
 
-PODFILE CHECKSUM: 643b5179de3de12b7b3238f9e776f293a03f625e
+PODFILE CHECKSUM: 757b17ca706c08fcaf41330c25566b3c19052383
 
 COCOAPODS: 1.3.1
