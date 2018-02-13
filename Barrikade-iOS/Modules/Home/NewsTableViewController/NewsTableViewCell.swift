@@ -24,6 +24,7 @@
 
 import UIKit
 import Reusable
+import Kingfisher
 
 final class NewsTableViewCell: UITableViewCell, NibReusable {
     // Mark:- IBOutlet
@@ -41,5 +42,7 @@ final class NewsTableViewCell: UITableViewCell, NibReusable {
     public func fill(news: News) {
         self.titleNews.text = news.title
         self.subtitleNews.text = news.chapo
+        guard let urlString = news.logo, let url = URL(string: urlString) else { return }
+        self.imageNews.kf.setImage(with: url)
     }
 }
