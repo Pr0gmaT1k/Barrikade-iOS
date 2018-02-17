@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,71 +40,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-Sq-HrS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiR-hQ-0lE">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="961.5"/>
-                                        <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3zg-Oe-Wl1">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="294.5"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="3zg-Oe-Wl1" secondAttribute="height" multiplier="14:11" id="xa7-Q6-GhY"/>
-                                                </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="PrQ-kg-b9m">
-                                                    <size key="itemSize" width="50" height="50"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells/>
-                                            </collectionView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ihM-tm-YDa">
-                                                <rect key="frame" x="0.0" y="294.5" width="375" height="667"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            </tableView>
-                                        </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="ihM-tm-YDa" secondAttribute="trailing" id="Br6-eo-EDB"/>
-                                            <constraint firstAttribute="bottom" secondItem="ihM-tm-YDa" secondAttribute="bottom" id="DeE-hE-QaM"/>
-                                            <constraint firstItem="3zg-Oe-Wl1" firstAttribute="leading" secondItem="AiR-hQ-0lE" secondAttribute="leading" id="FZ6-YH-pD6"/>
-                                            <constraint firstItem="3zg-Oe-Wl1" firstAttribute="top" secondItem="AiR-hQ-0lE" secondAttribute="top" id="Pi5-DW-GpY"/>
-                                            <constraint firstAttribute="trailing" secondItem="3zg-Oe-Wl1" secondAttribute="trailing" id="Ucs-ZP-0wM"/>
-                                            <constraint firstItem="ihM-tm-YDa" firstAttribute="leading" secondItem="AiR-hQ-0lE" secondAttribute="leading" id="ksY-Lr-s6S"/>
-                                            <constraint firstItem="ihM-tm-YDa" firstAttribute="top" secondItem="3zg-Oe-Wl1" secondAttribute="bottom" id="xv0-EV-w8e"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="AiR-hQ-0lE" secondAttribute="trailing" id="2wo-ua-x1a"/>
-                                    <constraint firstAttribute="bottom" secondItem="AiR-hQ-0lE" secondAttribute="bottom" id="jpF-K1-8o1"/>
-                                    <constraint firstItem="AiR-hQ-0lE" firstAttribute="leading" secondItem="yoP-Sq-HrS" secondAttribute="leading" id="znn-aW-yo9"/>
-                                    <constraint firstItem="AiR-hQ-0lE" firstAttribute="top" secondItem="yoP-Sq-HrS" secondAttribute="top" id="zuK-La-W6j"/>
-                                </constraints>
-                            </scrollView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ihM-tm-YDa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="97D-Cn-Gca" firstAttribute="top" secondItem="yoP-Sq-HrS" secondAttribute="bottom" id="3RY-Rp-062"/>
-                            <constraint firstItem="yoP-Sq-HrS" firstAttribute="height" secondItem="K5z-iz-fIX" secondAttribute="height" id="AZz-8w-BXU"/>
-                            <constraint firstItem="AiR-hQ-0lE" firstAttribute="width" secondItem="K5z-iz-fIX" secondAttribute="width" id="CPi-f1-lfB"/>
-                            <constraint firstItem="yoP-Sq-HrS" firstAttribute="leading" secondItem="K5z-iz-fIX" secondAttribute="leading" id="HgA-jj-mdK"/>
-                            <constraint firstAttribute="trailing" secondItem="yoP-Sq-HrS" secondAttribute="trailing" id="M6A-yx-Ddq"/>
-                            <constraint firstItem="ihM-tm-YDa" firstAttribute="height" secondItem="K5z-iz-fIX" secondAttribute="height" id="MDZ-9b-KfM"/>
-                            <constraint firstItem="yoP-Sq-HrS" firstAttribute="width" secondItem="K5z-iz-fIX" secondAttribute="width" id="b4t-Uo-WgI"/>
-                            <constraint firstItem="yoP-Sq-HrS" firstAttribute="top" secondItem="K5z-iz-fIX" secondAttribute="top" id="qsi-oE-bKk"/>
+                            <constraint firstItem="ihM-tm-YDa" firstAttribute="leading" secondItem="K5z-iz-fIX" secondAttribute="leading" id="28G-WT-2Pd"/>
+                            <constraint firstItem="ihM-tm-YDa" firstAttribute="top" secondItem="mSO-a7-rzx" secondAttribute="bottom" id="9WL-5b-gPs"/>
+                            <constraint firstItem="97D-Cn-Gca" firstAttribute="top" secondItem="ihM-tm-YDa" secondAttribute="bottom" id="LBP-E8-zw2"/>
+                            <constraint firstAttribute="trailing" secondItem="ihM-tm-YDa" secondAttribute="trailing" id="ooR-Dd-LeI"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="3zg-Oe-Wl1" id="VyR-0u-5fD"/>
                         <outlet property="tableView" destination="ihM-tm-YDa" id="unP-gt-MzT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oaa-D7-7ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2654" y="-645"/>
+            <point key="canvasLocation" x="2653.5999999999999" y="-645.42728635682158"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="BHn-os-VbQ">

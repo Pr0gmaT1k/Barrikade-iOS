@@ -14,6 +14,8 @@
 		A416901F1FFC59D600EE3682 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A416901D1FFC59D600EE3682 /* NewsTableViewCell.swift */; };
 		A41690201FFC59D600EE3682 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A416901E1FFC59D600EE3682 /* NewsTableViewCell.xib */; };
 		A45C2BFD20226047003D44A4 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C2BFC20226047003D44A4 /* Synchronizer.swift */; };
+		A4622F122038A92000127442 /* HighlitedTVCHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4622F102038A92000127442 /* HighlitedTVCHeader.swift */; };
+		A4622F132038A92000127442 /* HighlitedTVCHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4622F112038A92000127442 /* HighlitedTVCHeader.xib */; };
 		A47A32CE2033A3900067B88D /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A32CD2033A3900067B88D /* String+HTML.swift */; };
 		A48DF6551FFB6580003C109F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6541FFB6580003C109F /* AppDelegate.swift */; };
 		A48DF66A1FFB6580003C109F /* Barrikade_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6691FFB6580003C109F /* Barrikade_iOSTests.swift */; };
@@ -74,6 +76,8 @@
 		A416901D1FFC59D600EE3682 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		A416901E1FFC59D600EE3682 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		A45C2BFC20226047003D44A4 /* Synchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
+		A4622F102038A92000127442 /* HighlitedTVCHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlitedTVCHeader.swift; sourceTree = "<group>"; };
+		A4622F112038A92000127442 /* HighlitedTVCHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlitedTVCHeader.xib; sourceTree = "<group>"; };
 		A47A32CD2033A3900067B88D /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 		A48DF6511FFB6580003C109F /* Barrikade-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barrikade-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48DF6541FFB6580003C109F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,11 +186,13 @@
 			path = NewsTableViewController;
 			sourceTree = "<group>";
 		};
-		A44DE4132001345100303165 /* HighlitedTableViewHeader */ = {
+		A4622F0B2038A8A000127442 /* HighlitedTVCHeader */ = {
 			isa = PBXGroup;
 			children = (
+				A4622F102038A92000127442 /* HighlitedTVCHeader.swift */,
+				A4622F112038A92000127442 /* HighlitedTVCHeader.xib */,
 			);
-			path = HighlitedTableViewHeader;
+			path = HighlitedTVCHeader;
 			sourceTree = "<group>";
 		};
 		A48DF6481FFB6580003C109F = {
@@ -284,7 +290,7 @@
 		A48DF69F1FFB69BD003C109F /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A44DE4132001345100303165 /* HighlitedTableViewHeader */,
+				A4622F0B2038A8A000127442 /* HighlitedTVCHeader */,
 				A416901C1FFC599A00EE3682 /* NewsTableViewController */,
 				A41690171FFC457000EE3682 /* HighlitedNewsCollectionViewCell */,
 				A48DF6A01FFB69BD003C109F /* Main.storyboard */,
@@ -489,6 +495,7 @@
 				A41690201FFC59D600EE3682 /* NewsTableViewCell.xib in Resources */,
 				A48DF6B41FFB69BD003C109F /* Main.storyboard in Resources */,
 				A4E14AEF1FFBFA1B006A5F7E /* LaunchScreen.storyboard in Resources */,
+				A4622F132038A92000127442 /* HighlitedTVCHeader.xib in Resources */,
 				A4E14AF21FFBFA5D006A5F7E /* Localizable.strings in Resources */,
 				A4E14AE11FFBF7AF006A5F7E /* Default-568h@2x.png in Resources */,
 			);
@@ -715,6 +722,7 @@
 				A47A32CE2033A3900067B88D /* String+HTML.swift in Sources */,
 				A48DF6B71FFB69BD003C109F /* PageMenuViewController.swift in Sources */,
 				A4E14AE81FFBF8C8006A5F7E /* Images.swift in Sources */,
+				A4622F122038A92000127442 /* HighlitedTVCHeader.swift in Sources */,
 				A416901F1FFC59D600EE3682 /* NewsTableViewCell.swift in Sources */,
 				A4E14AEA1FFBF8C8006A5F7E /* Strings.swift in Sources */,
 				A4A12D68200BD4CF00C6B5E0 /* BarrikadeWSClient.swift in Sources */,
