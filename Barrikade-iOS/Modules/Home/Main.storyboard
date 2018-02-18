@@ -40,15 +40,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ihM-tm-YDa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ihM-tm-YDa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ihM-tm-YDa" firstAttribute="leading" secondItem="K5z-iz-fIX" secondAttribute="leading" id="28G-WT-2Pd"/>
-                            <constraint firstItem="ihM-tm-YDa" firstAttribute="top" secondItem="mSO-a7-rzx" secondAttribute="bottom" id="9WL-5b-gPs"/>
+                            <constraint firstItem="ihM-tm-YDa" firstAttribute="top" secondItem="K5z-iz-fIX" secondAttribute="top" id="9WL-5b-gPs"/>
                             <constraint firstItem="97D-Cn-Gca" firstAttribute="top" secondItem="ihM-tm-YDa" secondAttribute="bottom" id="LBP-E8-zw2"/>
                             <constraint firstAttribute="trailing" secondItem="ihM-tm-YDa" secondAttribute="trailing" id="ooR-Dd-LeI"/>
                         </constraints>

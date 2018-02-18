@@ -33,18 +33,20 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
 
     // Mark:- Properties
     fileprivate var news = [News]()
-    fileprivate var previousOffSet: CGFloat = 0.0
+    fileprivate var notificationToken: NotificationToken?
 
     // Mark:- Public func
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        news = Realm.safeInstance().objects(News.self).flatMap { $0 }
+        // Load Data
+        let newsResults = Realm.safeInstance().objects(News.self)
+        news = newsResults.flatMap { $0 }
 
-        // collectionView
-//        self.collectionView.dataSource = self
-//        self.collectionView.delegate = self
-//        self.collectionView.register(cellType: HighlitedNewsCollectionViewCell.self)
+        notificationToken = newsResults.addNotificationBlock {[weak self] (changes: RealmCollectionChange) in
+            self?.news = Realm.safeInstance().objects(News.self).flatMap { $0 }
+            self?.tableView.reloadData()
+        }
         // tableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -54,60 +56,18 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
     }
 }
 
-
-// Mark:- UICollectionViewDataSource
-//extension MainNewsViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return self.highlitedNews.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = self.collectionView.dequeueReusableCell(for: indexPath) as HighlitedNewsCollectionViewCell
-////        cell.fill(news: news[indexPath.row])
-//        return cell
-//    }
-//}
-//
-// Mark:- UICollectionViewDelegateFlowLayout
-//extension MainNewsViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let cellwidth = self.collectionView.bounds.size.width - 30
-//        return CGSize(width: cellwidth, height: cellwidth  * 5 / 6)
-//    }
-//
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        self.pagingScrollStrap()
-//    }
-//
-//    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-//        self.pagingScrollStrap()
-//    }
-//
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        self.previousOffSet = self.collectionView.contentOffset.x
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-//        // load news
-//    }
-//
-//    // TODO: This is dirty. Found a better way to do a nice swipe.
-//    private func pagingScrollStrap() {
-//        let offset = self.collectionView.contentOffset.x
-//        let direction = offset - previousOffSet
-//        let adapter: CGFloat = direction > 0 ? 0.55 : -0.45
-//        let nextPage = round((offset / self.collectionView.frame.width) + adapter)
-//        let index = IndexPath(row: Int(nextPage), section: 0)
-//        self.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-//    }
-//}
-
 // Mark:- UITableView Delegate & DataSource
 extension MainNewsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = HighlitedTVCHeader()
+        header.fill(news: self.news)
+        return header
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 11/14 * self.view.bounds.width
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.news.count
     }

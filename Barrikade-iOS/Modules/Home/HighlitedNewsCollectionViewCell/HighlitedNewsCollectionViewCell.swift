@@ -40,6 +40,8 @@ final class HighlitedNewsCollectionViewCell: UICollectionViewCell, NibReusable {
 
     public func fill(news: News) {
         self.titleNews.text = news.title
-        self.subtitleNews.text = news.chapo
+        self.subtitleNews.text = news.chapo?.removeBarrikadeSpecific
+        guard let urlString = news.logo, let url = URL(string: urlString) else { return }
+        self.imageNews.kf.setImage(with: url)
     }
 }

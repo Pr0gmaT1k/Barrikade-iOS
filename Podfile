@@ -5,7 +5,7 @@ target ‘Barrikade-iOS' do
   use_frameworks!
   pod 'NetworkStack'
   pod 'RealmSwift'
-  pod 'Reusable'
+  pod 'Reusable', '~> 3.0.1’
   pod 'PageMenu'
   pod 'ObjectMapper'
   pod 'Kingfisher'
