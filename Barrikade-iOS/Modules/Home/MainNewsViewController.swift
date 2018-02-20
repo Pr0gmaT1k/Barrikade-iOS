@@ -33,6 +33,7 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
 
     // Mark:- Properties
     fileprivate var news = [News]()
+    fileprivate var highlitedNews = [News]()
     fileprivate var notificationToken: NotificationToken?
 
     // Mark:- Public func
@@ -41,12 +42,13 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
 
         // Load Data
         let newsResults = Realm.safeInstance().objects(News.self)
-        news = newsResults.flatMap { $0 }
-
+        self.update(newsResults: newsResults)
+        
         notificationToken = newsResults.addNotificationBlock {[weak self] (changes: RealmCollectionChange) in
-            self?.news = Realm.safeInstance().objects(News.self).flatMap { $0 }
-            self?.tableView.reloadData()
+            let newsResults = Realm.safeInstance().objects(News.self)
+            self?.update(newsResults: newsResults)
         }
+        
         // tableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -54,18 +56,25 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 150
     }
+    
+    private func update(newsResults: Results<News>) {
+        if newsResults.count < 2 { return }
+        news = newsResults[2...newsResults.endIndex - 1].flatMap { $0 }
+        highlitedNews = newsResults[newsResults.startIndex...1].flatMap { $0 }
+        self.tableView.reloadData()
+    }
 }
 
 // Mark:- UITableView Delegate & DataSource
 extension MainNewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HighlitedTVCHeader()
-        header.fill(news: self.news)
+        header.fill(news: self.highlitedNews)
         return header
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 11/14 * self.view.bounds.width
+        return 9/14 * self.view.bounds.width
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

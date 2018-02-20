@@ -41,6 +41,8 @@ final class HighlitedTVCHeader: UIView, NibOwnerLoadable {
 
     // MARK:- fill
     func fill(news: [News]) {
+        // if nothing change, just return.
+        if news == self.news { return }
         self.news = news
     }
 }
@@ -65,7 +67,7 @@ extension HighlitedTVCHeader: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellwidth = self.collectionView.bounds.size.width - 30
+        let cellwidth = self.collectionView.bounds.size.width - 80
         return CGSize(width: cellwidth, height: cellwidth  * 5 / 6)
     }
 
