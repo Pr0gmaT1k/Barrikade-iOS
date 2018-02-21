@@ -57,8 +57,6 @@ final class HighlitedTVCHeader: UIView, NibOwnerLoadable {
 
     // MARK:- fill
     func fill(news: [News]) {
-        // if nothing change, just return.
-        if news == self.news { return }
         self.news = news
     }
 }
