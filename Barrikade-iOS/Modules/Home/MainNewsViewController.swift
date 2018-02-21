@@ -59,8 +59,9 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
     
     private func update(newsResults: Results<News>) {
         if newsResults.count < 2 { return }
-        news = newsResults[2...newsResults.endIndex - 1].flatMap { $0 }
-        highlitedNews = newsResults[newsResults.startIndex...1].flatMap { $0 }
+        let orderedNews = newsResults.sorted { $0.0.dateObject.compare($0.1.dateObject) == .orderedDescending }
+        news = orderedNews[2...orderedNews.endIndex - 1].flatMap { $0 }
+        highlitedNews = orderedNews[orderedNews.startIndex...1].flatMap { $0 }
         self.tableView.reloadData()
     }
 }
