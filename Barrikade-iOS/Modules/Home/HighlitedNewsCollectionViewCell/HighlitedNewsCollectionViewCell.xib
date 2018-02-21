@@ -31,6 +31,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFY-SZ-mKY">
                         <rect key="frame" x="5" y="5" width="351" height="344"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_launch" translatesAutoresizingMaskIntoConstraints="NO" id="8ro-zG-6wA">
+                                <rect key="frame" x="0.0" y="0.0" width="351" height="197"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foo" translatesAutoresizingMaskIntoConstraints="NO" id="kJn-Xi-rcR">
                                 <rect key="frame" x="0.0" y="0.0" width="351" height="197"/>
                                 <constraints>
@@ -54,11 +57,15 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="U4Y-sy-hoP" secondAttribute="bottom" constant="5" id="1XP-4l-MUK"/>
                             <constraint firstAttribute="trailing" secondItem="U4Y-sy-hoP" secondAttribute="trailing" constant="15" id="9Z7-3l-mwI"/>
+                            <constraint firstItem="8ro-zG-6wA" firstAttribute="leading" secondItem="cFY-SZ-mKY" secondAttribute="leading" id="IrY-gf-0LN"/>
                             <constraint firstItem="U4Y-sy-hoP" firstAttribute="leading" secondItem="cFY-SZ-mKY" secondAttribute="leading" constant="15" id="KQD-ie-kkY"/>
+                            <constraint firstItem="8ro-zG-6wA" firstAttribute="top" secondItem="cFY-SZ-mKY" secondAttribute="top" id="MwM-fQ-J6h"/>
                             <constraint firstItem="kJn-Xi-rcR" firstAttribute="leading" secondItem="cFY-SZ-mKY" secondAttribute="leading" id="Nhs-q5-8sc"/>
                             <constraint firstAttribute="trailing" secondItem="Kuo-mF-r2i" secondAttribute="trailing" constant="15" id="QM8-Rd-YnY"/>
                             <constraint firstItem="U4Y-sy-hoP" firstAttribute="top" secondItem="Kuo-mF-r2i" secondAttribute="bottom" constant="5" id="Rxs-eZ-Hjy"/>
+                            <constraint firstItem="8ro-zG-6wA" firstAttribute="height" secondItem="kJn-Xi-rcR" secondAttribute="height" id="acu-4R-esL"/>
                             <constraint firstItem="Kuo-mF-r2i" firstAttribute="top" secondItem="kJn-Xi-rcR" secondAttribute="bottom" constant="5" id="lb7-EN-NDd"/>
+                            <constraint firstAttribute="trailing" secondItem="8ro-zG-6wA" secondAttribute="trailing" id="ptf-wq-Ep1"/>
                             <constraint firstItem="kJn-Xi-rcR" firstAttribute="top" secondItem="cFY-SZ-mKY" secondAttribute="top" id="pvG-MN-c4I"/>
                             <constraint firstAttribute="trailing" secondItem="kJn-Xi-rcR" secondAttribute="trailing" id="uF4-Rj-fXd"/>
                             <constraint firstItem="Kuo-mF-r2i" firstAttribute="leading" secondItem="cFY-SZ-mKY" secondAttribute="leading" constant="15" id="zj7-Gc-zkG"/>
@@ -85,6 +92,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="bg_launch" width="282" height="450"/>
         <image name="foo" width="355" height="199"/>
     </resources>
 </document>
