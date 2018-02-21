@@ -29,6 +29,12 @@
                     <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="q6L-oG-ZNi">
                         <rect key="frame" x="10" y="12" width="505" height="130"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_launch" translatesAutoresizingMaskIntoConstraints="NO" id="UBr-rZ-kRZ">
+                                <rect key="frame" x="5" y="15" width="178.5" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UBr-rZ-kRZ" secondAttribute="height" multiplier="710:398" id="LEQ-92-b17"/>
+                                </constraints>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foo2" translatesAutoresizingMaskIntoConstraints="NO" id="j70-f5-FgU">
                                 <rect key="frame" x="5" y="15" width="178.5" height="100"/>
                                 <constraints>
@@ -44,7 +50,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="999" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlr-u8-eeD">
                                 <rect key="frame" x="190.5" y="25.5" width="309.5" height="99.5"/>
-                                <mutableString key="text">Es gibt viel zu tun in Thun.Jedes Jahr wiederholt sich eine blutige „Tradition“ in Thun. Diese findet unter dem Namen der Kantonal Bernischen Trophäenausstellung dem Fell und Pelzmarkt statt. Bei diesem Anlass wird vom kleinen Hasenfell über Fuchsfell bis hin zu Jagd-Gewehren und anderer Ausrüstung die dem ermorden von fühlenden Lebewesen dient, ausgestellt und feil geboten.Es gibt viel zu tun in Thun.Jedes Jahr wiederholt sich eine blutige „Tradition“ in Thun. Diese findet unter dem Namen der Kantonal Bernischen Trophäenausstellung dem Fell und Pelzmarkt statt. Bei diesem Anlass wird vom kleinen Hasenfell über Fuchsfell bis hin zu Jagd-Gewehren und anderer Ausrüstung die dem ermorden von fühlenden Lebewesen dient, ausgestellt und feil geboten.</mutableString>
+                                <string key="text">Es gibt viel zu tun in Thun.Jedes Jahr wiederholt sich eine blutige „Tradition“ in Thun. Diese findet unter dem Namen der Kantonal Bernischen Trophäenausstellung dem Fell und Pelzmarkt statt. Bei diesem Anlass wird vom kleinen Hasenfell über Fuchsfell bis hin zu Jagd-Gewehren und anderer Ausrüstung die dem ermorden von fühlenden Lebewesen dient, ausgestellt und feil geboten.Es gibt viel zu tun in Thun.Jedes Jahr wiederholt sich eine blutige „Tradition“ in Thun. Diese findet unter dem Namen der Kantonal Bernischen Trophäenausstellung dem Fell und Pelzmarkt statt. Bei diesem Anlass wird vom kleinen Hasenfell über Fuchsfell bis hin zu Jagd-Gewehren und anderer Ausrüstung die dem ermorden von fühlenden Lebewesen dient, ausgestellt und feil geboten.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -54,9 +60,12 @@
                         <constraints>
                             <constraint firstItem="Rlr-u8-eeD" firstAttribute="top" secondItem="ow6-Qh-L5t" secondAttribute="bottom" constant="5" id="BDv-RC-5Yo"/>
                             <constraint firstAttribute="bottom" secondItem="j70-f5-FgU" secondAttribute="bottom" constant="15" id="BLu-0b-fy1"/>
+                            <constraint firstAttribute="bottom" secondItem="UBr-rZ-kRZ" secondAttribute="bottom" constant="15" id="BWy-2Q-PJQ"/>
                             <constraint firstAttribute="trailing" secondItem="ow6-Qh-L5t" secondAttribute="trailing" constant="5" id="IJS-ft-VsJ"/>
                             <constraint firstItem="ow6-Qh-L5t" firstAttribute="top" secondItem="q6L-oG-ZNi" secondAttribute="top" constant="5" id="MvQ-Dj-Xy4"/>
+                            <constraint firstItem="UBr-rZ-kRZ" firstAttribute="top" secondItem="q6L-oG-ZNi" secondAttribute="top" constant="15" id="QhZ-HZ-Dlr"/>
                             <constraint firstItem="Rlr-u8-eeD" firstAttribute="leading" secondItem="j70-f5-FgU" secondAttribute="trailing" constant="7" id="V6h-IH-Bpw"/>
+                            <constraint firstItem="UBr-rZ-kRZ" firstAttribute="leading" secondItem="q6L-oG-ZNi" secondAttribute="leading" constant="5" id="WC4-iS-mNd"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Rlr-u8-eeD" secondAttribute="bottom" constant="5" id="aAN-Ij-Dqb"/>
                             <constraint firstItem="j70-f5-FgU" firstAttribute="top" secondItem="q6L-oG-ZNi" secondAttribute="top" constant="15" id="cdA-JX-W0n"/>
                             <constraint firstAttribute="trailing" secondItem="Rlr-u8-eeD" secondAttribute="trailing" constant="5" id="mWf-3Y-z0d"/>
@@ -85,6 +94,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="bg_launch" width="282" height="450"/>
         <image name="foo2" width="355" height="199"/>
     </resources>
 </document>
