@@ -2,6 +2,9 @@
 // MARK: Main title
 "navbar_main_title" = "BARRIKADE";
 
+// MARK:- Sync Mesage
+"sync_message_article_to_sync" = "Artikel zu synchronisieren : ";
+
 // MARK:- Page menu
 "page_menu_aktuel" = "AKTUEL";
 "page_menu_local_infos" = "LOKALE INFOS";

@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Page Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -41,19 +46,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ihM-tm-YDa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="5" width="375" height="662"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93M-sD-U05">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article to sync" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsR-ww-frh">
+                                        <rect key="frame" x="139.5" y="-8.5" width="96" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="TZL-C6-cOw"/>
+                                    <constraint firstItem="OsR-ww-frh" firstAttribute="centerY" secondItem="93M-sD-U05" secondAttribute="centerY" id="jmI-YJ-aJ9"/>
+                                    <constraint firstItem="OsR-ww-frh" firstAttribute="centerX" secondItem="93M-sD-U05" secondAttribute="centerX" id="kW9-5q-bf6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ihM-tm-YDa" firstAttribute="leading" secondItem="K5z-iz-fIX" secondAttribute="leading" id="28G-WT-2Pd"/>
-                            <constraint firstItem="ihM-tm-YDa" firstAttribute="top" secondItem="K5z-iz-fIX" secondAttribute="top" id="9WL-5b-gPs"/>
+                            <constraint firstItem="93M-sD-U05" firstAttribute="leading" secondItem="K5z-iz-fIX" secondAttribute="leading" id="E4z-OK-R7R"/>
                             <constraint firstItem="97D-Cn-Gca" firstAttribute="top" secondItem="ihM-tm-YDa" secondAttribute="bottom" id="LBP-E8-zw2"/>
+                            <constraint firstItem="93M-sD-U05" firstAttribute="top" secondItem="K5z-iz-fIX" secondAttribute="top" id="ViH-0N-SVZ"/>
+                            <constraint firstAttribute="trailing" secondItem="93M-sD-U05" secondAttribute="trailing" id="ZiQ-MF-5sF"/>
                             <constraint firstAttribute="trailing" secondItem="ihM-tm-YDa" secondAttribute="trailing" id="ooR-Dd-LeI"/>
+                            <constraint firstItem="ihM-tm-YDa" firstAttribute="top" secondItem="93M-sD-U05" secondAttribute="bottom" constant="5" id="p2m-Rn-BJm"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="syncLabel" destination="OsR-ww-frh" id="nH4-GN-sH4"/>
+                        <outlet property="syncViewCSTR" destination="TZL-C6-cOw" id="T2i-cE-sqg"/>
                         <outlet property="tableView" destination="ihM-tm-YDa" id="unP-gt-MzT"/>
                     </connections>
                 </viewController>

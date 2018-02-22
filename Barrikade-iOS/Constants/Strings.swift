@@ -19,6 +19,8 @@ enum L10n {
   static let pageMenuGlobaleInfos = L10n.tr("Localizable", "page_menu_globale_infos")
   /// LOKALE INFOS
   static let pageMenuLocalInfos = L10n.tr("Localizable", "page_menu_local_infos")
+  /// Artikel zu synchronisieren : 
+  static let syncMessageArticleToSync = L10n.tr("Localizable", "sync_message_article_to_sync")
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 

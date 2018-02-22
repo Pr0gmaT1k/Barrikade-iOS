@@ -28,25 +28,38 @@ import RxSwift
 import RealmSwift
 
 final class MainNewsViewController: UIViewController, StoryboardBased {
-    // Mark:- IBOutlet
+    // MARK:- IBOutlet
     @IBOutlet fileprivate weak var tableView: UITableView!
-
-    // Mark:- Properties
+    @IBOutlet fileprivate weak var syncViewCSTR: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var syncLabel: UILabel!
+    
+    // MARK:- Properties
     fileprivate var news = [News]()
     fileprivate var highlitedNews = [News]()
     fileprivate var notificationToken: NotificationToken?
-
-    // Mark:- Public func
+    fileprivate let realm = Realm.safeInstance()
+    
+    // MARK:- Public func
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Load Data
-        let newsResults = Realm.safeInstance().objects(News.self)
+        let newsResults = realm.objects(News.self)
         self.update(newsResults: newsResults)
         
         notificationToken = newsResults.addNotificationBlock {[weak self] (changes: RealmCollectionChange) in
-            let newsResults = Realm.safeInstance().objects(News.self)
+            guard let newsResults = self?.realm.objects(News.self) else { return }
             self?.update(newsResults: newsResults)
+        }
+        
+        Synchronizer.syncObserver = { [weak self] isSyncing in
+            if let totNewsInBase = self?.realm.objects(News.self).count,
+                let totRemoteNews = Synchronizer.totalRemoteEntries {
+                let nbNewsToSync = (totRemoteNews - totNewsInBase).description
+                self?.syncLabel.text = L10n.syncMessageArticleToSync + nbNewsToSync
+            }
+            self?.syncViewCSTR.constant = isSyncing ? 30 : 0
+            self?.syncLabel.isHidden = isSyncing ? false : true
         }
         
         // tableView
@@ -66,7 +79,7 @@ final class MainNewsViewController: UIViewController, StoryboardBased {
     }
 }
 
-// Mark:- UITableView Delegate & DataSource
+// MARK:- UITableView Delegate & DataSource
 extension MainNewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HighlitedTVCHeader()
