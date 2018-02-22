@@ -30,14 +30,13 @@ import RealmSwift
 final class NewsViewController: UIViewController, StoryboardBased {
     // MARK:- IBOutlet
     @IBOutlet fileprivate weak var tableView: UITableView!
-    @IBOutlet fileprivate weak var syncViewCSTR: NSLayoutConstraint!
-    @IBOutlet fileprivate weak var syncLabel: UILabel!
     
     // MARK:- Properties
     fileprivate var news = [News]()
     fileprivate var highlitedNews = [News]()
     fileprivate var notificationToken: NotificationToken?
     fileprivate let realm = Realm.safeInstance()
+    public var id = 0
     
     // MARK:- Public func
     override func viewDidLoad() {
@@ -52,16 +51,6 @@ final class NewsViewController: UIViewController, StoryboardBased {
             self?.update(newsResults: newsResults)
         }
         
-        Synchronizer.syncObserver = { [weak self] isSyncing in
-            if let totNewsInBase = self?.realm.objects(News.self).count,
-                let totRemoteNews = Synchronizer.totalRemoteEntries {
-                let nbNewsToSync = (totRemoteNews - totNewsInBase).description
-                self?.syncLabel.text = L10n.syncMessageArticleToSync + nbNewsToSync
-            }
-            self?.syncViewCSTR.constant = isSyncing ? 30 : 0
-            self?.syncLabel.isHidden = isSyncing ? false : true
-        }
-        
         // tableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -71,8 +60,13 @@ final class NewsViewController: UIViewController, StoryboardBased {
     }
     
     private func update(newsResults: Results<News>) {
-        if newsResults.count < 2 { return }
-        let orderedNews = newsResults.sorted { $0.0.dateObject.compare($0.1.dateObject) == .orderedDescending }
+        if newsResults.count < 20 { return }
+        var orderedNews = newsResults.sorted { $0.0.dateObject.compare($0.1.dateObject) == .orderedDescending }
+        // divide data base in 4 while the waiting of rubrique iD in WS
+        let fakeRange: Int = orderedNews.count / 5
+        let startRange: Int = fakeRange * id
+        let endRange: Int = (fakeRange * (id + 1)) - 1
+        orderedNews = orderedNews[startRange...endRange].flatMap { $0 }
         news = orderedNews[2...orderedNews.endIndex - 1].flatMap { $0 }
         highlitedNews = orderedNews[orderedNews.startIndex...1].flatMap { $0 }
         self.tableView.reloadData()
@@ -80,7 +74,7 @@ final class NewsViewController: UIViewController, StoryboardBased {
 }
 
 // MARK:- UITableView Delegate & DataSource
-extension MainNewsViewController: UITableViewDelegate, UITableViewDataSource {
+extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HighlitedTVCHeader()
         header.fill(news: self.highlitedNews)
