@@ -21,7 +21,7 @@ pod install
 ```
 
 ### Demo
-![Demo](https://raw.githubusercontent.com/Pr0gmaT1k/Barrikade-iOS/master/Presentation.gif)
+![Demo](https://raw.githubusercontent.com/Pr0gmaT1k/Barrikade-iOS/master/Prez.gif)
 
 ### License
 
