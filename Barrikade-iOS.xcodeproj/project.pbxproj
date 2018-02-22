@@ -21,8 +21,7 @@
 		A48DF66A1FFB6580003C109F /* Barrikade_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6691FFB6580003C109F /* Barrikade_iOSTests.swift */; };
 		A48DF6751FFB6580003C109F /* Barrikade_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6741FFB6580003C109F /* Barrikade_iOSUITests.swift */; };
 		A48DF6B41FFB69BD003C109F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48DF6A01FFB69BD003C109F /* Main.storyboard */; };
-		A48DF6B51FFB69BD003C109F /* MainNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6A11FFB69BD003C109F /* MainNewsViewController.swift */; };
-		A48DF6B61FFB69BD003C109F /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6A21FFB69BD003C109F /* NewsViewController.swift */; };
+		A48DF6B51FFB69BD003C109F /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6A11FFB69BD003C109F /* NewsViewController.swift */; };
 		A48DF6B71FFB69BD003C109F /* PageMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6A31FFB69BD003C109F /* PageMenuViewController.swift */; };
 		A48DF6B81FFB69BD003C109F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A48DF6A51FFB69BD003C109F /* Assets.xcassets */; };
 		A48DF6B91FFB69BD003C109F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48DF6A61FFB69BD003C109F /* LaunchScreen.storyboard */; };
@@ -88,8 +87,7 @@
 		A48DF6741FFB6580003C109F /* Barrikade_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barrikade_iOSUITests.swift; sourceTree = "<group>"; };
 		A48DF6761FFB6580003C109F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A48DF6A01FFB69BD003C109F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		A48DF6A11FFB69BD003C109F /* MainNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNewsViewController.swift; sourceTree = "<group>"; };
-		A48DF6A21FFB69BD003C109F /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		A48DF6A11FFB69BD003C109F /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		A48DF6A31FFB69BD003C109F /* PageMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageMenuViewController.swift; sourceTree = "<group>"; };
 		A48DF6A51FFB69BD003C109F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A48DF6A71FFB69BD003C109F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -294,8 +292,7 @@
 				A416901C1FFC599A00EE3682 /* NewsTableViewController */,
 				A41690171FFC457000EE3682 /* HighlitedNewsCollectionViewCell */,
 				A48DF6A01FFB69BD003C109F /* Main.storyboard */,
-				A48DF6A11FFB69BD003C109F /* MainNewsViewController.swift */,
-				A48DF6A21FFB69BD003C109F /* NewsViewController.swift */,
+				A48DF6A11FFB69BD003C109F /* NewsViewController.swift */,
 				A48DF6A31FFB69BD003C109F /* PageMenuViewController.swift */,
 			);
 			path = Home;
@@ -728,7 +725,6 @@
 				A416901A1FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.swift in Sources */,
 				A4E14AE71FFBF8C8006A5F7E /* Colors.swift in Sources */,
 				A4A12D5C200BD28700C6B5E0 /* News.swift in Sources */,
-				A48DF6B61FFB69BD003C109F /* NewsViewController.swift in Sources */,
 				A4A12D71200BE6E700C6B5E0 /* ListTransform.swift in Sources */,
 				A45C2BFD20226047003D44A4 /* Synchronizer.swift in Sources */,
 				A4A12D62200BD28E00C6B5E0 /* PaginationMapper.swift in Sources */,
@@ -736,7 +732,7 @@
 				A4A12D6A200BD7DC00C6B5E0 /* BarrikadeRoute.swift in Sources */,
 				A4A12D6E200BE5DB00C6B5E0 /* ArticleCollectionMapper.swift in Sources */,
 				A4F82D572014FCB700E4C0F3 /* Realm.swift in Sources */,
-				A48DF6B51FFB69BD003C109F /* MainNewsViewController.swift in Sources */,
+				A48DF6B51FFB69BD003C109F /* NewsViewController.swift in Sources */,
 				BA2B7807203DF81000204045 /* News+utils.swift in Sources */,
 				A4A12D5D200BD28700C6B5E0 /* Pagination.swift in Sources */,
 				A48DF6551FFB6580003C109F /* AppDelegate.swift in Sources */,

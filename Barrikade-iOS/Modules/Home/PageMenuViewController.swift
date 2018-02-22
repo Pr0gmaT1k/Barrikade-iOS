@@ -25,36 +25,46 @@
 import UIKit
 import PageMenu
 import Reusable
+import RealmSwift
 
 final class PageMenuViewController: UIViewController {
+    // MARK:- IBoutlets
+    @IBOutlet fileprivate weak var syncViewCSTR: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var syncLabel: UILabel!
+    @IBOutlet fileprivate weak var pageContainer: UIView!
+    
 
     // Mark:- Properties
+    private let realm = Realm.safeInstance()
     private var pageMenu: CAPSPageMenu?
     private var controllerArray: [UIViewController] = []
 
     // Mark:- Public func
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Page Menu
+        // Setup VC
         self.title = L10n.navbarMainTitle
 
-        let mainNewsVC = StoryboardScene.Main.mainNewsViewController.instantiate()
+        let mainNewsVC = StoryboardScene.Main.newsViewController.instantiate()
         mainNewsVC.title = L10n.pageMenuAktuel
+        mainNewsVC.id = 0
 
         let localInfosVC = StoryboardScene.Main.newsViewController.instantiate()
         localInfosVC.title = L10n.pageMenuLocalInfos
-        localInfosVC.view.backgroundColor = UIColor.yellow
-
+        localInfosVC.id = 1
+        
         let analyseVC = StoryboardScene.Main.newsViewController.instantiate()
         analyseVC.title = L10n.pageMenuAnalyses
-        analyseVC.view.backgroundColor = UIColor.green
-
+        analyseVC.id = 2
+        
         let globaleInfosVC = StoryboardScene.Main.newsViewController.instantiate()
         globaleInfosVC.title = L10n.pageMenuGlobaleInfos
-        globaleInfosVC.view.backgroundColor = UIColor.red
-
+        globaleInfosVC.id = 3
+        
         let agendaVC = StoryboardScene.Main.newsViewController.instantiate()
         agendaVC.title = L10n.pageMenuAgenda
-        agendaVC.view.backgroundColor = UIColor.blue
+        agendaVC.id = 4
 
         controllerArray.append(contentsOf: [mainNewsVC, localInfosVC, analyseVC, globaleInfosVC, agendaVC])
 
@@ -62,15 +72,26 @@ final class PageMenuViewController: UIViewController {
         let parameters: [CAPSPageMenuOption] = [
             .menuItemWidthBasedOnTitleTextWidth(true),
             .scrollMenuBackgroundColor(UIColor(named: .pageMenu)),
-            .viewBackgroundColor(UIColor(named: .pageMenu)),
+            .viewBackgroundColor(UIColor.groupTableViewBackground),
             .unselectedMenuItemLabelColor(.white),
             .selectionIndicatorHeight(1)
         ]
 
         // Init and add menu
-        let frame = self.view.bounds
+        let frame = self.pageContainer.bounds
         pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height), pageMenuOptions: parameters)
         guard let pageMenu = pageMenu else { return }
-        self.view.addSubview(pageMenu.view)
+        self.pageContainer.addSubview(pageMenu.view)
+        
+        // Sync Bar
+        Synchronizer.syncObserver = { [weak self] isSyncing in
+            if let totNewsInBase = self?.realm.objects(News.self).count,
+                let totRemoteNews = Synchronizer.totalRemoteEntries {
+                let nbNewsToSync = (totRemoteNews - totNewsInBase).description
+                self?.syncLabel.text = L10n.syncMessageArticleToSync + nbNewsToSync
+            }
+            self?.syncViewCSTR.constant = isSyncing ? 30 : 0
+            self?.syncLabel.isHidden = isSyncing ? false : true
+        }
     }
 }

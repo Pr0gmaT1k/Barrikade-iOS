@@ -60,8 +60,6 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<UINavigationController>(storyboard: Main.self)
 
-    static let mainNewsViewController = SceneType<Barrikade_iOS.MainNewsViewController>(storyboard: Main.self, identifier: "MainNewsViewController")
-
     static let newsViewController = SceneType<Barrikade_iOS.NewsViewController>(storyboard: Main.self, identifier: "NewsViewController")
   }
 }
