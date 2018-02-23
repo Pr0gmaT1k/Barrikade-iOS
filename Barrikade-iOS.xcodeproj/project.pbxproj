@@ -43,6 +43,10 @@
 		A4E14AF21FFBFA5D006A5F7E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4E14AF01FFBFA5D006A5F7E /* Localizable.strings */; };
 		A4F82D572014FCB700E4C0F3 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F82D562014FCB700E4C0F3 /* Realm.swift */; };
 		BA2B7807203DF81000204045 /* News+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B7806203DF81000204045 /* News+utils.swift */; };
+		BA2B780A2040C1F400204045 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B78082040C1F300204045 /* Event.swift */; };
+		BA2B780B2040C1F400204045 /* EventCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B78092040C1F300204045 /* EventCollection.swift */; };
+		BA2B780E2040C1FB00204045 /* EventCollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B780C2040C1FB00204045 /* EventCollectionMapper.swift */; };
+		BA2B780F2040C1FB00204045 /* EventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B780D2040C1FB00204045 /* EventMapper.swift */; };
 		D1F7BB9BCF46C0A323BBB5A1 /* Pods_Barrikade_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B75FABA7C6769370BD4392D /* Pods_Barrikade_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +114,10 @@
 		A4E14AF31FFC05C7006A5F7E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4F82D562014FCB700E4C0F3 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		BA2B7806203DF81000204045 /* News+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+utils.swift"; sourceTree = "<group>"; };
+		BA2B78082040C1F300204045 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		BA2B78092040C1F300204045 /* EventCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollection.swift; sourceTree = "<group>"; };
+		BA2B780C2040C1FB00204045 /* EventCollectionMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionMapper.swift; sourceTree = "<group>"; };
+		BA2B780D2040C1FB00204045 /* EventMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapper.swift; sourceTree = "<group>"; };
 		BF0AF8531A7F92F16BE049CF /* Pods-Barrikade-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOS/Pods-Barrikade-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CA0DB059944325E13679F613 /* Pods-Barrikade-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOSUITests/Pods-Barrikade-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D14FCE207A1884CFACBE61D8 /* Pods-Barrikade-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOSTests/Pods-Barrikade-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -260,6 +268,8 @@
 		A48DF69C1FFB69BD003C109F /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				BA2B78082040C1F300204045 /* Event.swift */,
+				BA2B78092040C1F300204045 /* EventCollection.swift */,
 				A4A12D6B200BE5D600C6B5E0 /* ArticleCollection.swift */,
 				A4A12D59200BD28700C6B5E0 /* News.swift */,
 				A4A12D5A200BD28700C6B5E0 /* Pagination.swift */,
@@ -324,6 +334,8 @@
 		A4A12D54200BC86A00C6B5E0 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				BA2B780C2040C1FB00204045 /* EventCollectionMapper.swift */,
+				BA2B780D2040C1FB00204045 /* EventMapper.swift */,
 				A4A12D6D200BE5DB00C6B5E0 /* ArticleCollectionMapper.swift */,
 				A4A12D60200BD28E00C6B5E0 /* NewsMapper.swift */,
 				A4A12D5F200BD28E00C6B5E0 /* PaginationMapper.swift */,
@@ -718,6 +730,8 @@
 				A47A32CE2033A3900067B88D /* String+HTML.swift in Sources */,
 				A48DF6B71FFB69BD003C109F /* PageMenuViewController.swift in Sources */,
 				A4E14AE81FFBF8C8006A5F7E /* Images.swift in Sources */,
+				BA2B780B2040C1F400204045 /* EventCollection.swift in Sources */,
+				BA2B780F2040C1FB00204045 /* EventMapper.swift in Sources */,
 				A4622F122038A92000127442 /* HighlitedTVCHeader.swift in Sources */,
 				A416901F1FFC59D600EE3682 /* NewsTableViewCell.swift in Sources */,
 				A4E14AEA1FFBF8C8006A5F7E /* Strings.swift in Sources */,
@@ -730,6 +744,7 @@
 				A4A12D62200BD28E00C6B5E0 /* PaginationMapper.swift in Sources */,
 				A4A12D6C200BE5D600C6B5E0 /* ArticleCollection.swift in Sources */,
 				A4A12D6A200BD7DC00C6B5E0 /* BarrikadeRoute.swift in Sources */,
+				BA2B780A2040C1F400204045 /* Event.swift in Sources */,
 				A4A12D6E200BE5DB00C6B5E0 /* ArticleCollectionMapper.swift in Sources */,
 				A4F82D572014FCB700E4C0F3 /* Realm.swift in Sources */,
 				A48DF6B51FFB69BD003C109F /* NewsViewController.swift in Sources */,
@@ -737,6 +752,7 @@
 				A4A12D5D200BD28700C6B5E0 /* Pagination.swift in Sources */,
 				A48DF6551FFB6580003C109F /* AppDelegate.swift in Sources */,
 				A4E14AE91FFBF8C8006A5F7E /* Storyboards.swift in Sources */,
+				BA2B780E2040C1FB00204045 /* EventCollectionMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
