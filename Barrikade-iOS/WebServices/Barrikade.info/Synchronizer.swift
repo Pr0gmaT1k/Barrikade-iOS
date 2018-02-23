@@ -46,6 +46,7 @@ struct Synchronizer {
      */
     func sync(startAt: Int = 0) {
         Synchronizer.isSyncing = true
+        
         barrikadeWSClient.getNews(startAt: startAt)
             .observeOn(MainScheduler.instance)
             .subscribe { event in

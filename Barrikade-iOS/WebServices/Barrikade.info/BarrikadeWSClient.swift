@@ -45,4 +45,14 @@ final class BarrikadeWSClient {
                 return Mapper<ArticleCollection>().map(JSONObject: json)
             }
     }
+    
+    func getEvent() -> Observable<EventCollection?> {
+        let requestParameters = RequestParameters(method: .get,
+                                                  route: BarrikadeRoute.eventCollection)
+        
+        return BarrikadeWSClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
+            .map { (_, json) -> EventCollection? in
+                return Mapper<EventCollection>().map(JSONObject: json)
+        }
+    }
 }
