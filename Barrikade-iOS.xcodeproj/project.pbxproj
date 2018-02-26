@@ -47,6 +47,7 @@
 		BA2B780B2040C1F400204045 /* EventCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B78092040C1F300204045 /* EventCollection.swift */; };
 		BA2B780E2040C1FB00204045 /* EventCollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B780C2040C1FB00204045 /* EventCollectionMapper.swift */; };
 		BA2B780F2040C1FB00204045 /* EventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B780D2040C1FB00204045 /* EventMapper.swift */; };
+		BA708C802044C82100CFC183 /* DetailsNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA708C7F2044C82100CFC183 /* DetailsNewsViewController.swift */; };
 		D1F7BB9BCF46C0A323BBB5A1 /* Pods_Barrikade_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B75FABA7C6769370BD4392D /* Pods_Barrikade_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +119,7 @@
 		BA2B78092040C1F300204045 /* EventCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollection.swift; sourceTree = "<group>"; };
 		BA2B780C2040C1FB00204045 /* EventCollectionMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionMapper.swift; sourceTree = "<group>"; };
 		BA2B780D2040C1FB00204045 /* EventMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapper.swift; sourceTree = "<group>"; };
+		BA708C7F2044C82100CFC183 /* DetailsNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsNewsViewController.swift; sourceTree = "<group>"; };
 		BF0AF8531A7F92F16BE049CF /* Pods-Barrikade-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOS/Pods-Barrikade-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CA0DB059944325E13679F613 /* Pods-Barrikade-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOSUITests/Pods-Barrikade-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D14FCE207A1884CFACBE61D8 /* Pods-Barrikade-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOSTests/Pods-Barrikade-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				A48DF6A01FFB69BD003C109F /* Main.storyboard */,
 				A48DF6A11FFB69BD003C109F /* NewsViewController.swift */,
 				A48DF6A31FFB69BD003C109F /* PageMenuViewController.swift */,
+				BA708C7F2044C82100CFC183 /* DetailsNewsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				A4A12D6A200BD7DC00C6B5E0 /* BarrikadeRoute.swift in Sources */,
 				BA2B780A2040C1F400204045 /* Event.swift in Sources */,
 				A4A12D6E200BE5DB00C6B5E0 /* ArticleCollectionMapper.swift in Sources */,
+				BA708C802044C82100CFC183 /* DetailsNewsViewController.swift in Sources */,
 				A4F82D572014FCB700E4C0F3 /* Realm.swift in Sources */,
 				A48DF6B51FFB69BD003C109F /* NewsViewController.swift in Sources */,
 				BA2B7807203DF81000204045 /* News+utils.swift in Sources */,
@@ -930,7 +934,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7HFQM5S863;
 				INFOPLIST_FILE = "$(SRCROOT)/Barrikade-iOS/Ressources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mutu.Barrikade-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -947,7 +951,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7HFQM5S863;
 				INFOPLIST_FILE = "$(SRCROOT)/Barrikade-iOS/Ressources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mutu.Barrikade-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
