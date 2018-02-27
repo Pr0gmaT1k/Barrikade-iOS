@@ -45,7 +45,13 @@ final class DetailsNewsViewController: UIViewController, StoryboardBased {
         self.titleLabel.text = news?.title
     }
     
+    // MARK:- IBActions
     @IBAction func dismissDidTouch(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func shareDidTouch(_ sender: Any) {
+        let vc = UIActivityViewController(activityItems: [news?.selff], applicationActivities: nil)
+        self.present(vc, animated: true)
     }
 }
