@@ -59,6 +59,7 @@ final class NewsViewController: UIViewController, StoryboardBased {
         self.tableView.estimatedRowHeight = 150
     }
     
+    // MARK:- Private func
     private func update(newsResults: Results<News>) {
         if newsResults.count < 20 { return }
         var orderedNews = newsResults.sorted { $0.0.dateObject.compare($0.1.dateObject) == .orderedDescending }
@@ -71,6 +72,12 @@ final class NewsViewController: UIViewController, StoryboardBased {
         highlitedNews = orderedNews[orderedNews.startIndex...1].flatMap { $0 }
         self.tableView.reloadData()
     }
+    
+    fileprivate func load(news: News) {
+        let detailsVC = StoryboardScene.Main.detailsNewsViewController.instantiate()
+        detailsVC.news = news
+        self.present(detailsVC, animated: true)
+    }
 }
 
 // MARK:- UITableView Delegate & DataSource
@@ -78,6 +85,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HighlitedTVCHeader()
         header.fill(news: self.highlitedNews)
+        header.delegate = self
         return header
     }
 
@@ -96,11 +104,13 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Load news
-        let newsSelected = self.news[indexPath.row]
-        let detailsVC = StoryboardScene.Main.detailsNewsViewController.instantiate()
-        detailsVC.articleHTML = newsSelected.texte
-        detailsVC.news = newsSelected
-        self.present(detailsVC, animated: true)
+        load(news: news[indexPath.row])
+    }
+}
+
+// MARK:- HighlitedTVCHeaderDelegate
+extension NewsViewController: HighlitedTVCHeaderDelegate {
+    func HighlitedTVCHeaderDidSelectedNews(index: Int) {
+        load(news: highlitedNews[index])
     }
 }

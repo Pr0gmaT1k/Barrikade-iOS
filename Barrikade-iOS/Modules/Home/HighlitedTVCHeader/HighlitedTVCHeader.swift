@@ -25,15 +25,20 @@
 import UIKit
 import Reusable
 
+protocol HighlitedTVCHeaderDelegate: class {
+    func HighlitedTVCHeaderDidSelectedNews(index: Int)
+}
+
 final class HighlitedTVCHeader: UIView, NibOwnerLoadable {
     // MARK:- IBOutlets
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
 
     // Mark:- Properties
+    weak var delegate: HighlitedTVCHeaderDelegate?
+    fileprivate var previousOffSet: CGFloat = 0.0
     fileprivate var news = [News]() {
         didSet { self.collectionView.reloadData() }
     }
-    fileprivate var previousOffSet: CGFloat = 0.0
 
     // MARK:- INIT
     required init?(coder aDecoder: NSCoder) {
@@ -78,6 +83,7 @@ extension HighlitedTVCHeader: UICollectionViewDataSource {
 extension HighlitedTVCHeader: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        delegate?.HighlitedTVCHeaderDidSelectedNews(index: indexPath.row)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -95,10 +101,6 @@ extension HighlitedTVCHeader: UICollectionViewDelegateFlowLayout {
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.previousOffSet = self.collectionView.contentOffset.x
-    }
-
-    func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-        // load news
     }
 
     // TODO: This is dirty. Found a better way to do a nice swipe.

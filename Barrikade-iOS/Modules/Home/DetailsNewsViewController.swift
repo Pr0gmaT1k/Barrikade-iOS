@@ -30,7 +30,6 @@ final class DetailsNewsViewController: UIViewController, StoryboardBased {
     @IBOutlet fileprivate weak var webView: UIWebView!
     
     // MARËK:- Properties
-    var articleHTML: String?
     var news: News?
     fileprivate var stringCSS = String()
     
@@ -39,7 +38,7 @@ final class DetailsNewsViewController: UIViewController, StoryboardBased {
         super.viewDidLoad()
         
         // Web View
-        guard let articleHTML = self.articleHTML else { return }
+        guard let articleHTML = self.news?.texte else { return }
         let htmlHeadCSS = L10n.newsDetailsHtml(articleHTML)
         self.webView.loadHTMLString(htmlHeadCSS, baseURL: Bundle.main.bundleURL)
     }
