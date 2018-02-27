@@ -31,10 +31,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFY-SZ-mKY">
                         <rect key="frame" x="5" y="5" width="351" height="344"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_launch" translatesAutoresizingMaskIntoConstraints="NO" id="8ro-zG-6wA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_empty_thumbnails" translatesAutoresizingMaskIntoConstraints="NO" id="8ro-zG-6wA">
                                 <rect key="frame" x="0.0" y="0.0" width="351" height="197"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foo" translatesAutoresizingMaskIntoConstraints="NO" id="kJn-Xi-rcR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kJn-Xi-rcR">
                                 <rect key="frame" x="0.0" y="0.0" width="351" height="197"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kJn-Xi-rcR" secondAttribute="height" multiplier="710:398" id="0bO-J6-ToN"/>
@@ -92,7 +92,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="bg_launch" width="282" height="450"/>
-        <image name="foo" width="355" height="199"/>
+        <image name="bg_empty_thumbnails" width="355" height="200"/>
     </resources>
 </document>

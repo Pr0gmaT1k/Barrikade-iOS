@@ -69,6 +69,7 @@ final class NewsViewController: UIViewController, StoryboardBased {
     // MARK:- Private func
     private func update(newsResults: Results<News>) {
         if newsResults.count < 20 { return }
+        self.tableView.isHidden = newsResults.isEmpty
         var orderedNews = newsResults.sorted { $0.0.dateObject.compare($0.1.dateObject) == .orderedDescending }
         // divide data base in 4 while the waiting of rubrique iD in WS
         let fakeRange: Int = orderedNews.count / 5

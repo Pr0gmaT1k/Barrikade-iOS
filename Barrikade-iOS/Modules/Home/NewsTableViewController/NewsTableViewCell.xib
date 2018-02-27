@@ -29,13 +29,13 @@
                     <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="q6L-oG-ZNi">
                         <rect key="frame" x="10" y="12" width="505" height="130"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_launch" translatesAutoresizingMaskIntoConstraints="NO" id="UBr-rZ-kRZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_empty_thumbnails" translatesAutoresizingMaskIntoConstraints="NO" id="UBr-rZ-kRZ">
                                 <rect key="frame" x="5" y="15" width="178.5" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UBr-rZ-kRZ" secondAttribute="height" multiplier="710:398" id="LEQ-92-b17"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foo2" translatesAutoresizingMaskIntoConstraints="NO" id="j70-f5-FgU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j70-f5-FgU">
                                 <rect key="frame" x="5" y="15" width="178.5" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Jd6-IT-S5U"/>
@@ -94,7 +94,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bg_launch" width="282" height="450"/>
-        <image name="foo2" width="355" height="199"/>
+        <image name="bg_empty_thumbnails" width="355" height="200"/>
     </resources>
 </document>

@@ -28,6 +28,7 @@ import Reusable
 final class DetailsNewsViewController: UIViewController, StoryboardBased {
     // MARK:- IBOutlets
     @IBOutlet fileprivate weak var webView: UIWebView!
+    @IBOutlet fileprivate weak var titleLabel: UILabel!
     
     // MARËK:- Properties
     var news: News?
@@ -41,9 +42,10 @@ final class DetailsNewsViewController: UIViewController, StoryboardBased {
         guard let articleHTML = self.news?.texte else { return }
         let htmlHeadCSS = L10n.newsDetailsHtml(articleHTML)
         self.webView.loadHTMLString(htmlHeadCSS, baseURL: Bundle.main.bundleURL)
+        self.titleLabel.text = news?.title
     }
     
-    @IBAction func lol(_ sender: Any) {
+    @IBAction func dismissDidTouch(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 }
