@@ -48,8 +48,7 @@
 		BA2B780E2040C1FB00204045 /* EventCollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B780C2040C1FB00204045 /* EventCollectionMapper.swift */; };
 		BA2B780F2040C1FB00204045 /* EventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B780D2040C1FB00204045 /* EventMapper.swift */; };
 		BA708C802044C82100CFC183 /* DetailsNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA708C7F2044C82100CFC183 /* DetailsNewsViewController.swift */; };
-		BA708C8D2044E93500CFC183 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = BA708C8C2044E93500CFC183 /* main.css */; };
-		BA708C8F2044EC2C00CFC183 /* image_responsive.css in Resources */ = {isa = PBXBuildFile; fileRef = BA708C8E2044EC2C00CFC183 /* image_responsive.css */; };
+		BA7E3F97204500FA00406E8A /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = BA7E3F96204500FA00406E8A /* bootstrap.min.css */; };
 		D1F7BB9BCF46C0A323BBB5A1 /* Pods_Barrikade_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B75FABA7C6769370BD4392D /* Pods_Barrikade_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,8 +121,7 @@
 		BA2B780C2040C1FB00204045 /* EventCollectionMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionMapper.swift; sourceTree = "<group>"; };
 		BA2B780D2040C1FB00204045 /* EventMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapper.swift; sourceTree = "<group>"; };
 		BA708C7F2044C82100CFC183 /* DetailsNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsNewsViewController.swift; sourceTree = "<group>"; };
-		BA708C8C2044E93500CFC183 /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
-		BA708C8E2044EC2C00CFC183 /* image_responsive.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = image_responsive.css; sourceTree = "<group>"; };
+		BA7E3F96204500FA00406E8A /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
 		BF0AF8531A7F92F16BE049CF /* Pods-Barrikade-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOS/Pods-Barrikade-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CA0DB059944325E13679F613 /* Pods-Barrikade-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOSUITests/Pods-Barrikade-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D14FCE207A1884CFACBE61D8 /* Pods-Barrikade-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barrikade-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barrikade-iOSTests/Pods-Barrikade-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -389,8 +387,7 @@
 		BA708C892044D8C000CFC183 /* CSS */ = {
 			isa = PBXGroup;
 			children = (
-				BA708C8E2044EC2C00CFC183 /* image_responsive.css */,
-				BA708C8C2044E93500CFC183 /* main.css */,
+				BA7E3F96204500FA00406E8A /* bootstrap.min.css */,
 			);
 			path = CSS;
 			sourceTree = "<group>";
@@ -514,14 +511,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7E3F97204500FA00406E8A /* bootstrap.min.css in Resources */,
 				A48DF6B91FFB69BD003C109F /* LaunchScreen.storyboard in Resources */,
 				A48DF6B81FFB69BD003C109F /* Assets.xcassets in Resources */,
 				A416901B1FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.xib in Resources */,
 				A4E14AEB1FFBF8C8006A5F7E /* Colors.txt in Resources */,
 				A41690201FFC59D600EE3682 /* NewsTableViewCell.xib in Resources */,
 				A48DF6B41FFB69BD003C109F /* Main.storyboard in Resources */,
-				BA708C8F2044EC2C00CFC183 /* image_responsive.css in Resources */,
-				BA708C8D2044E93500CFC183 /* main.css in Resources */,
 				A4E14AEF1FFBFA1B006A5F7E /* LaunchScreen.storyboard in Resources */,
 				A4622F132038A92000127442 /* HighlitedTVCHeader.xib in Resources */,
 				A4E14AF21FFBFA5D006A5F7E /* Localizable.strings in Resources */,

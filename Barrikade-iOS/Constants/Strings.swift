@@ -9,6 +9,10 @@ import Foundation
 enum L10n {
   /// BARRIKADE
   static let navbarMainTitle = L10n.tr("Localizable", "navbar_main_title")
+  /// <html><head><link rel="stylesheet" href="bootstrap.min.css"</head><body>%@</body></html>
+  static func newsDetailsHtml(_ p1: String) -> String {
+    return L10n.tr("Localizable", "news_details_html", p1)
+  }
   /// AGENDA
   static let pageMenuAgenda = L10n.tr("Localizable", "page_menu_agenda")
   /// AKTUEL

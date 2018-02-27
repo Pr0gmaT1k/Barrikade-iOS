@@ -40,8 +40,8 @@ final class DetailsNewsViewController: UIViewController, StoryboardBased {
         
         // Web View
         guard let articleHTML = self.articleHTML else { return }
-        let lol = "<html><head><link href=\"main.css\" rel=\"stylesheet\" media=\"screen\"></head><body><div>\(articleHTML)</div></body></html>"
-        self.webView.loadHTMLString(lol, baseURL: Bundle.main.bundleURL)
+        let htmlHeadCSS = L10n.newsDetailsHtml(articleHTML)
+        self.webView.loadHTMLString(htmlHeadCSS, baseURL: Bundle.main.bundleURL)
     }
     
     @IBAction func lol(_ sender: Any) {

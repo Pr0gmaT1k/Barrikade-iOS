@@ -11,3 +11,7 @@
 "page_menu_analyses" = "ANALYSE";
 "page_menu_globale_infos" = "GLOBALE INFOS";
 "page_menu_agenda" = "AGENDA";
+
+// MARK:- News Details
+// HTML: Boot strap is in ressources/css. Specify Bundle.mail.bundleUrl for the Base Url.
+"news_details_html" = "<html><head><link rel=\"stylesheet\" href=\"bootstrap.min.css\"</head><body>%@</body></html>";
