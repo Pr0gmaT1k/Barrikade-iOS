@@ -97,5 +97,10 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Load news
+        let newsSelected = self.news[indexPath.row]
+        let detailsVC = StoryboardScene.Main.detailsNewsViewController.instantiate()
+        detailsVC.articleHTML = newsSelected.texte
+        detailsVC.news = newsSelected
+        self.present(detailsVC, animated: true)
     }
 }

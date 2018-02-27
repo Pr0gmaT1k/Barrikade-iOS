@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -106,7 +107,7 @@
         <!--Details News View Controller-->
         <scene sceneID="PNb-5L-aJJ">
             <objects>
-                <viewController id="Kab-lv-K6K" customClass="DetailsNewsViewController" customModule="Barrikade_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsNewsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kab-lv-K6K" customClass="DetailsNewsViewController" customModule="Barrikade_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nEz-SW-ukj"/>
                         <viewControllerLayoutGuide type="bottom" id="GDx-Km-nNf"/>
@@ -119,13 +120,22 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSV-KK-5Xw">
+                                <rect key="frame" x="313" y="20" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="lol:" destination="Kab-lv-K6K" eventType="touchUpInside" id="B3M-xp-MGm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GDx-Km-nNf" firstAttribute="top" secondItem="eEJ-8T-q6j" secondAttribute="bottom" id="CXg-xd-Ns4"/>
                             <constraint firstItem="eEJ-8T-q6j" firstAttribute="leading" secondItem="5Di-YS-DDW" secondAttribute="leading" id="DZB-MO-PgW"/>
                             <constraint firstAttribute="trailing" secondItem="eEJ-8T-q6j" secondAttribute="trailing" id="JI3-jb-z6K"/>
+                            <constraint firstItem="wSV-KK-5Xw" firstAttribute="top" secondItem="nEz-SW-ukj" secondAttribute="bottom" id="e45-Og-d6Q"/>
                             <constraint firstItem="eEJ-8T-q6j" firstAttribute="top" secondItem="nEz-SW-ukj" secondAttribute="bottom" id="eNV-9t-Btf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wSV-KK-5Xw" secondAttribute="trailing" id="xIz-dy-Ow0"/>
                         </constraints>
                     </view>
                     <connections>

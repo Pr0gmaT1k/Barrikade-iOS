@@ -23,21 +23,28 @@
 
 import UIKit
 import WebKit
+import Reusable
 
-final class DetailsNewsViewController: UIViewController {
+final class DetailsNewsViewController: UIViewController, StoryboardBased {
     // MARK:- IBOutlets
     @IBOutlet fileprivate weak var webView: UIWebView!
     
-    // MARK:- Properties
-    var articleHTML: String? {
-        didSet {
-            guard let articleHTML = self.articleHTML else { return }
-            self.webView.loadHTMLString(articleHTML, baseURL: nil)
-        }
-    }
+    // MARËK:- Properties
+    var articleHTML: String?
+    var news: News?
+    fileprivate var stringCSS = String()
     
     // MARK:- Public func
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Web View
+        guard let articleHTML = self.articleHTML else { return }
+        let lol = "<html><head><link href=\"main.css\" rel=\"stylesheet\" media=\"screen\"></head><body><div>\(articleHTML)</div></body></html>"
+        self.webView.loadHTMLString(lol, baseURL: Bundle.main.bundleURL)
+    }
+    
+    @IBAction func lol(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
