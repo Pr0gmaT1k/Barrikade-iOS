@@ -27,6 +27,12 @@ import Reusable
 import RxSwift
 import RealmSwift
 
+/// Word around due to CAPageMenu dismiss menu when i present a new VC from one of his child VC.
+/// Present it from the mother VC = ok
+protocol NewsViewControllerDelegate: class {
+    func newsVCPresentNews(news: News)
+}
+
 final class NewsViewController: UIViewController, StoryboardBased {
     // MARK:- IBOutlet
     @IBOutlet fileprivate weak var tableView: UITableView!
@@ -37,6 +43,7 @@ final class NewsViewController: UIViewController, StoryboardBased {
     fileprivate var notificationToken: NotificationToken?
     fileprivate let realm = Realm.safeInstance()
     public var id = 0
+    public weak var delegate: NewsViewControllerDelegate?
     
     // MARK:- Public func
     override func viewDidLoad() {
@@ -104,13 +111,13 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        load(news: news[indexPath.row])
+        delegate?.newsVCPresentNews(news: news[indexPath.row])
     }
 }
 
 // MARK:- HighlitedTVCHeaderDelegate
 extension NewsViewController: HighlitedTVCHeaderDelegate {
     func HighlitedTVCHeaderDidSelectedNews(index: Int) {
-        load(news: highlitedNews[index])
+        delegate?.newsVCPresentNews(news: highlitedNews[index])
     }
 }

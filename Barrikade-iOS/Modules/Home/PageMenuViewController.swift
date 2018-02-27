@@ -49,22 +49,27 @@ final class PageMenuViewController: UIViewController {
         let mainNewsVC = StoryboardScene.Main.newsViewController.instantiate()
         mainNewsVC.title = L10n.pageMenuAktuel
         mainNewsVC.id = 0
+        mainNewsVC.delegate = self
 
         let localInfosVC = StoryboardScene.Main.newsViewController.instantiate()
         localInfosVC.title = L10n.pageMenuLocalInfos
         localInfosVC.id = 1
+        localInfosVC.delegate = self
         
         let analyseVC = StoryboardScene.Main.newsViewController.instantiate()
         analyseVC.title = L10n.pageMenuAnalyses
         analyseVC.id = 2
+        analyseVC.delegate = self
         
         let globaleInfosVC = StoryboardScene.Main.newsViewController.instantiate()
         globaleInfosVC.title = L10n.pageMenuGlobaleInfos
         globaleInfosVC.id = 3
+        globaleInfosVC.delegate = self
         
         let agendaVC = StoryboardScene.Main.newsViewController.instantiate()
         agendaVC.title = L10n.pageMenuAgenda
         agendaVC.id = 4
+        agendaVC.delegate = self
 
         controllerArray.append(contentsOf: [mainNewsVC, localInfosVC, analyseVC, globaleInfosVC, agendaVC])
 
@@ -93,5 +98,14 @@ final class PageMenuViewController: UIViewController {
             self?.syncViewCSTR.constant = isSyncing ? 30 : 0
             self?.syncLabel.isHidden = isSyncing ? false : true
         }
+    }
+}
+
+// MARK:- NewsViewControllerDelegate
+extension PageMenuViewController: NewsViewControllerDelegate {
+    func newsVCPresentNews(news: News) {
+        let vc = StoryboardScene.Main.detailsNewsViewController.instantiate()
+        vc.news = news
+        self.present(vc, animated: true)
     }
 }
