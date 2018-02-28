@@ -16,6 +16,7 @@ extension News: Mappable {
     self.date <- map["date"]
     self.descriptionn <- map["description"]
     self.id <- map["id"]
+    self.id_rubrique <- map["id_rubrique"]
     self.logo <- map["logo"]
     self.selff <- map["self"]
     self.soustitre <- map["soustitre"]
