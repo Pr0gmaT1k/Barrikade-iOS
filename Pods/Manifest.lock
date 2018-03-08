@@ -19,6 +19,7 @@ PODS:
   - Reusable/Storyboard (3.0.1)
   - Reusable/View (3.0.1)
   - RxSwift (3.6.1)
+  - SwiftGen (5.2.1)
   - SwiftLint (0.25.0)
 
 DEPENDENCIES:
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - PageMenu
   - RealmSwift
   - Reusable (~> 3.0.1)
+  - SwiftGen
   - SwiftLint
 
 SPEC CHECKSUMS:
@@ -41,8 +43,9 @@ SPEC CHECKSUMS:
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
   Reusable: 5362d10271ca8316b104698a21e90498f47e8339
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: ac47f6ad1349f05c76a82cfe411a46f72c52ccfa
+PODFILE CHECKSUM: 348d388d12762d167c7bfc66c0cca32f7d879855
 
 COCOAPODS: 1.4.0
