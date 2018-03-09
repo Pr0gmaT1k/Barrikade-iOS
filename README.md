@@ -7,19 +7,6 @@ Barrikade-iOS
 [![Issues](https://img.shields.io/github/issues/Pr0gmaT1k/Barrikade-iOS.svg?style=flat)](https://github.com/dekatotoro/SlideMenuControllerSwift/issues?state=open)
 
 
-### Initialisation
-
-* Installation de Cocoapods, Homebrew, SwiftLint, SwiftGen et intégration des dépendances
-```ruby
-sudo gem install cocoapods
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-git clone https://github.com/Pr0gmaT1k/Expansive-iOS
-cd Barrikade-iOS
-brew install swiftlint
-brew install swiftgen
-pod install
-```
-
 ### Demo
 ![Demo](https://raw.githubusercontent.com/Pr0gmaT1k/Barrikade-iOS/master/Prez.gif)
 
