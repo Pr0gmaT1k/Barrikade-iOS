@@ -80,12 +80,6 @@ final class NewsViewController: UIViewController, StoryboardBased {
         highlitedNews = orderedNews[orderedNews.startIndex...1].flatMap { $0 }
         self.tableView.reloadData()
     }
-    
-    fileprivate func load(news: News) {
-        let detailsVC = StoryboardScene.Main.detailsNewsViewController.instantiate()
-        detailsVC.news = news
-        self.present(detailsVC, animated: true)
-    }
 }
 
 // MARK:- UITableView Delegate & DataSource

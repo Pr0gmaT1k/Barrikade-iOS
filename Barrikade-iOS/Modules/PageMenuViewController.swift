@@ -66,9 +66,8 @@ final class PageMenuViewController: UIViewController {
         globaleInfosVC.id = 3
         globaleInfosVC.delegate = self
         
-        let agendaVC = StoryboardScene.Main.newsViewController.instantiate()
+        let agendaVC = StoryboardScene.Main.eventViewController.instantiate()
         agendaVC.title = L10n.pageMenuAgenda
-        agendaVC.id = 4
         agendaVC.delegate = self
 
         controllerArray.append(contentsOf: [mainNewsVC, localInfosVC, analyseVC, globaleInfosVC, agendaVC])
@@ -108,4 +107,13 @@ extension PageMenuViewController: NewsViewControllerDelegate {
         vc.news = news
         self.present(vc, animated: true)
     }
+}
+
+// MARK:- EventViewControllerDelegate
+extension PageMenuViewController: EventViewControllerDelegate {
+    func eventVCPresentNews(event: Event) {
+        
+    }
+    
+    
 }

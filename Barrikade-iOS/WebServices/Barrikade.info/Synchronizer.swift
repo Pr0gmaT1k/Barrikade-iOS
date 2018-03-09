@@ -102,7 +102,7 @@ struct Synchronizer {
      :startAt: Custom pagination start. Default value = 0
      */
     public func syncEvent(startAt: Int = 0) {
-        barrikadeWSClient.getNews(startAt: startAt)
+        barrikadeWSClient.getEvent(startAt: startAt)
             .observeOn(MainScheduler.instance)
             .subscribe { event in
                 switch event {
@@ -126,7 +126,7 @@ struct Synchronizer {
                     } else {
                         // Add one by one then stop sync
                         for event in data {
-                            if self.realm.object(ofType: News.self, forPrimaryKey: event.id) == nil {
+                            if self.realm.object(ofType: Event.self, forPrimaryKey: event.id) == nil {
                                 try? self.realm.write {
                                     self.realm.add(event)
                                 }

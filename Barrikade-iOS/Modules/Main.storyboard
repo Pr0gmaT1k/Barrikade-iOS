@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEO-5K-KJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3597.5999999999999" y="-645.42728635682158"/>
+            <point key="canvasLocation" x="4084" y="-645"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="J2I-ja-Rez">
@@ -233,6 +233,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ism-lC-IOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="880.79999999999995" y="-645.42728635682158"/>
+        </scene>
+        <!--Event View Controller-->
+        <scene sceneID="cvl-tC-6Ns">
+            <objects>
+                <viewController storyboardIdentifier="EventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="338-8b-8fS" customClass="EventViewController" customModule="Barrikade_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ADM-d1-4Ll"/>
+                        <viewControllerLayoutGuide type="bottom" id="GWk-5V-Et0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sz2-FE-K3H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_empty" translatesAutoresizingMaskIntoConstraints="NO" id="D05-sb-60Z">
+                                <rect key="frame" x="97" y="243" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="TBs-CY-JBa"/>
+                                    <constraint firstAttribute="height" constant="180" id="gyz-oO-U6o"/>
+                                </constraints>
+                            </imageView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uai-MZ-owM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uai-MZ-owM" firstAttribute="top" secondItem="Sz2-FE-K3H" secondAttribute="top" id="Ahk-3z-M5E"/>
+                            <constraint firstAttribute="trailing" secondItem="uai-MZ-owM" secondAttribute="trailing" id="BO1-PP-fY5"/>
+                            <constraint firstItem="GWk-5V-Et0" firstAttribute="top" secondItem="uai-MZ-owM" secondAttribute="bottom" id="Nfk-GS-aX6"/>
+                            <constraint firstItem="D05-sb-60Z" firstAttribute="centerX" secondItem="Sz2-FE-K3H" secondAttribute="centerX" id="Q3S-7g-UuW"/>
+                            <constraint firstItem="D05-sb-60Z" firstAttribute="centerY" secondItem="Sz2-FE-K3H" secondAttribute="centerY" id="e1x-NO-ZYg"/>
+                            <constraint firstItem="uai-MZ-owM" firstAttribute="leading" secondItem="Sz2-FE-K3H" secondAttribute="leading" id="n8x-rN-eMS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="uai-MZ-owM" id="lud-Kg-0xI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9Q-Hd-LdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3378" y="-645"/>
         </scene>
     </scenes>
     <resources>
