@@ -46,9 +46,9 @@ final class BarrikadeWSClient {
             }
     }
     
-    func getEvent() -> Observable<EventCollection?> {
+    func getEvent(startAt: Int) -> Observable<EventCollection?> {
         let requestParameters = RequestParameters(method: .get,
-                                                  route: BarrikadeRoute.eventCollection)
+                                                  route: BarrikadeRoute.eventCollection(startAt: startAt))
         
         return BarrikadeWSClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
             .map { (_, json) -> EventCollection? in

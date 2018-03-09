@@ -102,6 +102,38 @@ struct Synchronizer {
      :startAt: Custom pagination start. Default value = 0
      */
     public func syncEvent(startAt: Int = 0) {
-        
+        barrikadeWSClient.getNews(startAt: startAt)
+            .observeOn(MainScheduler.instance)
+            .subscribe { event in
+                switch event {
+                case .completed: break
+                case .error(let error): print(error)
+                case .next(let eventCollection):
+                    // Check nullable value
+                    guard let totalEntriesString = eventCollection?.pagination?.totalEntries,
+                        let totalEntries = Int(totalEntriesString),
+                        let data = eventCollection?.data,
+                        let id = data.last?.id else { return }
+                    
+                    // Check if one of the oldest fetched event is in the DB.
+                    if self.realm.object(ofType: Event.self, forPrimaryKey: id) == nil
+                        && startAt < totalEntries {
+                        // Add all then reccursive
+                        try? self.realm.write {
+                            self.realm.add(data)
+                        }
+                        self.syncEvent(startAt: startAt + 10)
+                    } else {
+                        // Add one by one then stop sync
+                        for event in data {
+                            if self.realm.object(ofType: News.self, forPrimaryKey: event.id) == nil {
+                                try? self.realm.write {
+                                    self.realm.add(event)
+                                }
+                            }
+                        }
+                    }
+                }
+        }.addDisposableTo(disposeBag)
     }
 }

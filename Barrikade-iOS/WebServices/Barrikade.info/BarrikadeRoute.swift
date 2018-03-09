@@ -26,12 +26,12 @@ import NetworkStack
 
 public enum BarrikadeRoute: Routable {
     case articleCollection(startAt: Int)
-    case eventCollection
+    case eventCollection(startAt: Int)
 
     public var path: String {
         switch self {
         case .articleCollection(startAt: let startAt): return "?page=articleCollection&debut_articles=" + startAt.description
-        case .eventCollection: return "?page=eventCollection"
+        case .eventCollection(startAt: let startAt): return "?page=eventCollection&debut_agenda=" + startAt.description
         }
     }
 }
