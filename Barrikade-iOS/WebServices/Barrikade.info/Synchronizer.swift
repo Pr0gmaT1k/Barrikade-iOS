@@ -39,12 +39,23 @@ struct Synchronizer {
     public static var syncObserver: ((Bool) -> Void)? { didSet { Synchronizer.syncObserver?(Synchronizer.isSyncing) } }
     public static var totalRemoteEntries: Int?
     
+    
+    
     // Mark:- Public func
     /**
-     :func: sync Synchronize the database of Barrikade news. Stop when we get a news that is already in the database.
+     Sync everything from the newest to oldest
+     Basically synchronize news and event
+     */
+    public func sync() {
+        syncNews()
+        syncEvent()
+    }
+    
+    /**
+     :func: syncNews Synchronize the database of Barrikade news. Stop when we get a news that is already in the database.
      :startAt: Custom pagination start. Default value = 0
      */
-    func sync(startAt: Int = 0) {
+    func syncNews(startAt: Int = 0) {
         Synchronizer.isSyncing = true
         
         barrikadeWSClient.getNews(startAt: startAt)
@@ -67,7 +78,7 @@ struct Synchronizer {
                         try? self.realm.write {
                             self.realm.add(data)
                         }
-                        self.sync(startAt: startAt + 10)
+                        self.syncNews(startAt: startAt + 10)
                     } else {
                         // Add one by one then stop sync
                         for news in data {
@@ -79,8 +90,18 @@ struct Synchronizer {
                         }
                         Synchronizer.isSyncing = false
                     }
-                case .error(_): Synchronizer.isSyncing = false
+                case .error(let error):
+                    print(error)
+                    Synchronizer.isSyncing = false
                 }
             }.addDisposableTo(disposeBag)
+    }
+    
+    /**
+     :func: syncEvent Synchronize the database of Barrikade event. Stop when we get a event that is already in the database.
+     :startAt: Custom pagination start. Default value = 0
+     */
+    public func syncEvent(startAt: Int = 0) {
+        
     }
 }
