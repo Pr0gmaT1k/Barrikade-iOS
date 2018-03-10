@@ -10,10 +10,14 @@ import UIKit
 import Reusable
 
 final class EventTableViewCell: UITableViewCell, NibReusable {
-    // MARK:- IBOutlet
+    // MARK:- IBOutlets
     @IBOutlet private weak var countainerView: UIView!
     @IBOutlet private weak var titleEvent: UILabel!
-    @IBOutlet private weak var subtitleEvent: UILabel!
+    @IBOutlet private weak var dayLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var hourLabel: UILabel!
+    @IBOutlet private weak var locationLabel: UILabel!
+    @IBOutlet private weak var adressLabel: UILabel!
     
     // MARK:- Func
     override func awakeFromNib() {
@@ -22,7 +26,13 @@ final class EventTableViewCell: UITableViewCell, NibReusable {
     }
     
     public func fill(event: Event) {
+        let calendar = Calendar.current
+        
         self.titleEvent.text = event.title
-        self.subtitleEvent.text = event.descriptionn
+        self.dayLabel.text = event.startDayName?.uppercased()
+        self.dateLabel.text = calendar.component(.day, from: event.dateObject).description
+        self.hourLabel.text = event.startTime
+        self.locationLabel.text = event.location
+        self.adressLabel.text = event.address?.removeHTMLParagraph
     }
 }

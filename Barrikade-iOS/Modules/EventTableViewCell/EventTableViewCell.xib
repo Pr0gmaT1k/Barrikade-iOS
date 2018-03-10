@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventTableViewCell" customModule="Barrikade_iOS" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="331" id="80m-ou-4CD" customClass="EventTableViewCell" customModule="Barrikade_iOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="525" height="331"/>
@@ -27,41 +27,89 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="WvZ-HS-DZW">
-                        <rect key="frame" x="10" y="12" width="505" height="130"/>
+                        <rect key="frame" x="10" y="12" width="505" height="100"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oto-8a-D3p">
-                                <rect key="frame" x="5" y="15" width="178.5" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="oto-8a-D3p" secondAttribute="height" multiplier="710:398" id="VRV-aj-IOf"/>
-                                    <constraint firstAttribute="height" constant="100" id="hXy-7w-MbH"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Demo gegen Jagd- und Trophäenausstellung" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qih-nM-5wC">
-                                <rect key="frame" x="190.5" y="5" width="309.5" height="15.5"/>
+                                <rect key="frame" x="100" y="5" width="400" height="15.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="999" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZL5-6E-xmh">
-                                <rect key="frame" x="190.5" y="25.5" width="309.5" height="99.5"/>
-                                <string key="text">Es gibt viel zu tun in Thun.Jedes Jahr wiederholt sich eine blutige „Tradition“ in Thun. Diese findet unter dem Namen der Kantonal Bernischen Trophäenausstellung dem Fell und Pelzmarkt statt. Bei diesem Anlass wird vom kleinen Hasenfell über Fuchsfell bis hin zu Jagd-Gewehren und anderer Ausrüstung die dem ermorden von fühlenden Lebewesen dient, ausgestellt und feil geboten.Es gibt viel zu tun in Thun.Jedes Jahr wiederholt sich eine blutige „Tradition“ in Thun. Diese findet unter dem Namen der Kantonal Bernischen Trophäenausstellung dem Fell und Pelzmarkt statt. Bei diesem Anlass wird vom kleinen Hasenfell über Fuchsfell bis hin zu Jagd-Gewehren und anderer Ausrüstung die dem ermorden von fühlenden Lebewesen dient, ausgestellt und feil geboten.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="hour" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yW-Ih-d6Q">
+                                <rect key="frame" x="100" y="25.5" width="400" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="7yW-ET-HzF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypn-s1-jHM">
+                                <rect key="frame" x="100" y="46.5" width="400" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="D2U-48-34G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6F-Nl-feb">
+                                <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dimanche" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bp0-Gp-Fw6">
+                                        <rect key="frame" x="5" y="5" width="70" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="PxK-P6-gLK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4M-yO-tiS">
+                                        <rect key="frame" x="5" y="30" width="70" height="40"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Bp0-Gp-Fw6" firstAttribute="top" secondItem="y6F-Nl-feb" secondAttribute="top" constant="5" id="7Bo-Lp-mYA"/>
+                                    <constraint firstAttribute="width" secondItem="y6F-Nl-feb" secondAttribute="height" id="8Zo-2f-wPF"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bp0-Gp-Fw6" secondAttribute="trailing" constant="5" id="Cip-9K-jyG"/>
+                                    <constraint firstAttribute="bottom" secondItem="f4M-yO-tiS" secondAttribute="bottom" constant="10" id="F5I-Uj-r1C"/>
+                                    <constraint firstAttribute="height" constant="80" id="Oyg-UZ-0Th"/>
+                                    <constraint firstAttribute="trailing" secondItem="f4M-yO-tiS" secondAttribute="trailing" constant="5" id="S4u-02-yV8"/>
+                                    <constraint firstItem="f4M-yO-tiS" firstAttribute="leading" secondItem="y6F-Nl-feb" secondAttribute="leading" constant="5" id="Vqg-GA-qq2"/>
+                                    <constraint firstItem="Bp0-Gp-Fw6" firstAttribute="leading" secondItem="y6F-Nl-feb" secondAttribute="leading" constant="5" id="fmU-Sg-IdI"/>
+                                    <constraint firstItem="f4M-yO-tiS" firstAttribute="top" secondItem="Bp0-Gp-Fw6" secondAttribute="bottom" constant="5" id="kDh-Lp-aRd"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="adress" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4w-xn-s3a">
+                                <rect key="frame" x="100" y="67.5" width="400" height="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZL5-6E-xmh" firstAttribute="top" secondItem="Qih-nM-5wC" secondAttribute="bottom" constant="5" id="B1y-fA-C9p"/>
-                            <constraint firstItem="oto-8a-D3p" firstAttribute="leading" secondItem="WvZ-HS-DZW" secondAttribute="leading" constant="5" id="CJi-m5-ZGg"/>
+                            <constraint firstItem="9yW-Ih-d6Q" firstAttribute="leading" secondItem="y6F-Nl-feb" secondAttribute="trailing" constant="10" id="ECX-lq-KBG"/>
+                            <constraint firstItem="r4w-xn-s3a" firstAttribute="top" secondItem="Ypn-s1-jHM" secondAttribute="bottom" constant="5" id="Eam-T9-U0Q"/>
                             <constraint firstItem="Qih-nM-5wC" firstAttribute="top" secondItem="WvZ-HS-DZW" secondAttribute="top" constant="5" id="EmF-M5-fZZ"/>
-                            <constraint firstItem="ZL5-6E-xmh" firstAttribute="leading" secondItem="oto-8a-D3p" secondAttribute="trailing" constant="7" id="PEY-Il-kxK"/>
-                            <constraint firstAttribute="trailing" secondItem="ZL5-6E-xmh" secondAttribute="trailing" constant="5" id="QOA-dO-v9x"/>
-                            <constraint firstAttribute="bottom" secondItem="oto-8a-D3p" secondAttribute="bottom" constant="15" id="TbI-Cg-5ig"/>
+                            <constraint firstItem="Ypn-s1-jHM" firstAttribute="leading" secondItem="y6F-Nl-feb" secondAttribute="trailing" constant="10" id="LVb-1b-KF4"/>
+                            <constraint firstAttribute="trailing" secondItem="Ypn-s1-jHM" secondAttribute="trailing" constant="5" id="Nff-fP-Vd8"/>
+                            <constraint firstAttribute="trailing" secondItem="9yW-Ih-d6Q" secondAttribute="trailing" constant="5" id="PHM-pL-3qy"/>
+                            <constraint firstItem="9yW-Ih-d6Q" firstAttribute="top" secondItem="Qih-nM-5wC" secondAttribute="bottom" constant="5" id="Rqj-Yd-ozO"/>
+                            <constraint firstAttribute="trailing" secondItem="r4w-xn-s3a" secondAttribute="trailing" constant="5" id="ULT-7R-WtY"/>
                             <constraint firstAttribute="trailing" secondItem="Qih-nM-5wC" secondAttribute="trailing" constant="5" id="VrC-aw-as6"/>
-                            <constraint firstItem="oto-8a-D3p" firstAttribute="top" secondItem="WvZ-HS-DZW" secondAttribute="top" constant="15" id="evs-EC-VTv"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZL5-6E-xmh" secondAttribute="bottom" constant="5" id="i5K-8T-fQ9"/>
-                            <constraint firstItem="Qih-nM-5wC" firstAttribute="leading" secondItem="oto-8a-D3p" secondAttribute="trailing" constant="7" id="y1o-2y-2Lg"/>
+                            <constraint firstItem="y6F-Nl-feb" firstAttribute="leading" secondItem="WvZ-HS-DZW" secondAttribute="leading" constant="10" id="Wfr-x2-if3"/>
+                            <constraint firstItem="r4w-xn-s3a" firstAttribute="leading" secondItem="y6F-Nl-feb" secondAttribute="trailing" constant="10" id="a6n-Au-NnI"/>
+                            <constraint firstItem="y6F-Nl-feb" firstAttribute="top" secondItem="WvZ-HS-DZW" secondAttribute="top" constant="10" id="ckd-DZ-rsH"/>
+                            <constraint firstItem="Qih-nM-5wC" firstAttribute="leading" secondItem="y6F-Nl-feb" secondAttribute="trailing" constant="10" id="edx-yi-UiB"/>
+                            <constraint firstItem="Ypn-s1-jHM" firstAttribute="top" secondItem="9yW-Ih-d6Q" secondAttribute="bottom" constant="5" id="fEm-bt-ltm"/>
+                            <constraint firstAttribute="bottom" secondItem="y6F-Nl-feb" secondAttribute="bottom" constant="10" id="v64-De-faR"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="r4w-xn-s3a" secondAttribute="bottom" constant="5" id="vIm-z7-KjT"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -76,8 +124,12 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <viewLayoutGuide key="safeArea" id="FN7-TJ-DME"/>
             <connections>
+                <outlet property="adressLabel" destination="r4w-xn-s3a" id="NN9-CE-7ei"/>
                 <outlet property="countainerView" destination="WvZ-HS-DZW" id="hbO-hs-BFq"/>
-                <outlet property="subtitleEvent" destination="ZL5-6E-xmh" id="ObF-pY-heB"/>
+                <outlet property="dateLabel" destination="f4M-yO-tiS" id="T8k-el-UbZ"/>
+                <outlet property="dayLabel" destination="Bp0-Gp-Fw6" id="e2k-sb-h8O"/>
+                <outlet property="hourLabel" destination="9yW-Ih-d6Q" id="AJe-hK-ufp"/>
+                <outlet property="locationLabel" destination="Ypn-s1-jHM" id="iEW-Lf-9mh"/>
                 <outlet property="titleEvent" destination="Qih-nM-5wC" id="HwE-1j-vBL"/>
             </connections>
             <point key="canvasLocation" x="136.5" y="197.5"/>

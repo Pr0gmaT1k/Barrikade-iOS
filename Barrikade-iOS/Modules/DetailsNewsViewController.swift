@@ -30,8 +30,9 @@ final class DetailsNewsViewController: UIViewController, StoryboardBased {
     @IBOutlet fileprivate weak var webView: UIWebView!
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     
-    // MARËK:- Properties
+    // MARK:- Properties
     var news: News?
+    var event: Event?
     fileprivate var stringCSS = String()
     
     // MARK:- Public func
