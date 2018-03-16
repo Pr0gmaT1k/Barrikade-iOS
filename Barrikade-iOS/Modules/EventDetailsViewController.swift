@@ -1,7 +1,8 @@
 //
-//  DetailsNewsViewController.swift
+//  EventDetailsViewController.swift
 //  Barrikade-iOS
-//  Created by Pr0gmaT1k on 02/01/2018.
+//
+//  Created by azerty on 16/03/2018.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,30 +23,28 @@
 //  THE SOFTWARE.
 
 import UIKit
-import WebKit
-import Reusable
 
-final class DetailsNewsViewController: UIViewController, StoryboardBased {
+final class EventDetailsViewController: UIViewController {
     // MARK:- IBOutlets
     @IBOutlet fileprivate weak var webView: UIWebView!
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     
     // MARK:- Properties
-    var news: News?
+    var event: Event?
     fileprivate var stringCSS = String()
     
     // MARK:- Public func
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let articleHTML = self.news?.texte else { return }
+        guard let articleHTML = self.event?.descriptionn else { return }
         
         // Web View
         let htmlHeadCSS = L10n.newsDetailsHtml(articleHTML)
         self.webView.loadHTMLString(htmlHeadCSS, baseURL: Bundle.main.bundleURL)
         
         // Title
-        self.titleLabel.text = news?.title
+        self.titleLabel.text = event?.title
     }
     
     // MARK:- IBActions
@@ -54,8 +53,8 @@ final class DetailsNewsViewController: UIViewController, StoryboardBased {
     }
     
     @IBAction func shareDidTouch(_ sender: Any) {
-        guard let newsLink = news?.selff else { return }
-        let vc = UIActivityViewController(activityItems: [newsLink], applicationActivities: nil)
+        guard let eventLink = event?.selff else { return }
+        let vc = UIActivityViewController(activityItems: [eventLink], applicationActivities: nil)
         self.present(vc, animated: true)
     }
 }

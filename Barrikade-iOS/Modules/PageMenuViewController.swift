@@ -112,8 +112,8 @@ extension PageMenuViewController: NewsViewControllerDelegate {
 // MARK:- EventViewControllerDelegate
 extension PageMenuViewController: EventViewControllerDelegate {
     func eventVCPresentNews(event: Event) {
-        
+        let vc = StoryboardScene.Main.eventDetailsViewController.instantiate()
+        vc.event = event
+        self.present(vc, animated: true)
     }
-    
-    
 }
