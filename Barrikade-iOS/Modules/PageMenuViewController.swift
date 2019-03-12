@@ -66,11 +66,11 @@ final class PageMenuViewController: UIViewController {
         globaleInfosVC.id = 3
         globaleInfosVC.delegate = self
         
-        let agendaVC = StoryboardScene.Main.eventViewController.instantiate()
-        agendaVC.title = L10n.pageMenuAgenda
-        agendaVC.delegate = self
+//        let agendaVC = StoryboardScene.Main.eventViewController.instantiate()
+//        agendaVC.title = L10n.pageMenuAgenda
+//        agendaVC.delegate = self
 
-        controllerArray.append(contentsOf: [mainNewsVC, localInfosVC, analyseVC, globaleInfosVC, agendaVC])
+        controllerArray.append(contentsOf: [mainNewsVC, localInfosVC, analyseVC, globaleInfosVC/*, agendaVC*/])
 
         // Page menu options
         let parameters: [CAPSPageMenuOption] = [

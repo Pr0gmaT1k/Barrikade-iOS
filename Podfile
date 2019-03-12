@@ -11,6 +11,8 @@ target ‘Barrikade-iOS' do
   pod 'Kingfisher'
   pod 'SwiftLint'
   pod 'SwiftGen'
+  pod 'SwiftLint'
+  pod 'SwiftGen'
 
   target 'Barrikade-iOSTests' do
     inherit! :search_paths

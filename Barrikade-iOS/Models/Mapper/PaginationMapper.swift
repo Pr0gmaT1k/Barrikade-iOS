@@ -14,6 +14,6 @@ extension Pagination: Mappable {
     // MARK: Attributes
     self.next <- map["next"]
     self.selff <- map["selff"]
-    self.totalEntries <- map["totalEntries"]
+    self.totalEntries.value <- map["totalEntries"]
   }
 }

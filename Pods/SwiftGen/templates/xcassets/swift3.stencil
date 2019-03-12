@@ -1,126 +1,105 @@
-// Generated using SwiftGen, by O.Halligon — https://github.com/SwiftGen/SwiftGen
+// swiftlint:disable all
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
 
 {% if catalogs %}
+{% set enumName %}{{param.enumName|default:"Asset"}}{% endset %}
+{% set colorType %}{{param.colorTypeName|default:"ColorAsset"}}{% endset %}
+{% set dataType %}{{param.dataTypeName|default:"DataAsset"}}{% endset %}
+{% set imageType %}{{param.imageTypeName|default:"ImageAsset"}}{% endset %}
 {% set colorAlias %}{{param.colorAliasName|default:"AssetColorTypeAlias"}}{% endset %}
-{% set imageAlias %}{{param.imageAliasName|default:"Image"}}{% endset %}
+{% set imageAlias %}{{param.imageAliasName|default:"AssetImageTypeAlias"}}{% endset %}
+{% set forceNamespaces %}{{param.forceProvidesNamespaces|default:"false"}}{% endset %}
+{% set accessModifier %}{% if param.publicAccess %}public{% else %}internal{% endif %}{% endset %}
 #if os(OSX)
   import AppKit.NSImage
-  typealias {{colorAlias}} = NSColor
-  typealias {{imageAlias}} = NSImage
+  {{accessModifier}} typealias {{colorAlias}} = NSColor
+  {{accessModifier}} typealias {{imageAlias}} = NSImage
 #elseif os(iOS) || os(tvOS) || os(watchOS)
   import UIKit.UIImage
-  typealias {{colorAlias}} = UIColor
-  typealias {{imageAlias}} = UIImage
+  {{accessModifier}} typealias {{colorAlias}} = UIColor
+  {{accessModifier}} typealias {{imageAlias}} = UIImage
 #endif
 
 // swiftlint:disable superfluous_disable_command
 // swiftlint:disable file_length
 
-{% set enumName %}{{param.enumName|default:"Asset"}}{% endset %}
-{% set imageType %}{{param.imageTypeName|default:"ImageAsset"}}{% endset %}
-@available(*, deprecated, renamed: "{{imageType}}")
-typealias {{enumName}}Type = {{imageType}}
+// MARK: - Asset Catalogs
 
-struct {{imageType}} {
-  fileprivate var name: String
+{% macro enumBlock assets %}
+  {% call casesBlock assets %}
+  {% if param.allValues %}
 
-  var image: {{imageAlias}} {
-    let bundle = Bundle(for: BundleToken.self)
-    #if os(iOS) || os(tvOS)
-    let image = {{imageAlias}}(named: name, in: bundle, compatibleWith: nil)
-    #elseif os(OSX)
-    let image = bundle.image(forResource: name)
-    #elseif os(watchOS)
-    let image = {{imageAlias}}(named: name)
-    #endif
-    guard let result = image else { fatalError("Unable to load image named \(name).") }
-    return result
+  // swiftlint:disable trailing_comma
+  {{accessModifier}} static let allColors: [{{colorType}}] = [
+    {% filter indent:2 %}{% call allValuesBlock assets "color" "" %}{% endfilter %}
+  ]
+  {{accessModifier}} static let allDataAssets: [{{dataType}}] = [
+    {% filter indent:2 %}{% call allValuesBlock assets "data" "" %}{% endfilter %}
+  ]
+  {{accessModifier}} static let allImages: [{{imageType}}] = [
+    {% filter indent:2 %}{% call allValuesBlock assets "image" "" %}{% endfilter %}
+  ]
+  // swiftlint:enable trailing_comma
+  {% endif %}
+{% endmacro %}
+{% macro casesBlock assets %}
+  {% for asset in assets %}
+  {% if asset.type == "color" %}
+  {{accessModifier}} static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{colorType}}(name: "{{asset.value}}")
+  {% elif asset.type == "data" %}
+  {{accessModifier}} static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{dataType}}(name: "{{asset.value}}")
+  {% elif asset.type == "image" %}
+  {{accessModifier}} static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{imageType}}(name: "{{asset.value}}")
+  {% elif asset.items and ( forceNamespaces == "true" or asset.isNamespaced == "true" ) %}
+  {{accessModifier}} enum {{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+
+    {% filter indent:2 %}{% call casesBlock asset.items %}{% endfilter %}
   }
-}
-
-{% set colorType %}{{param.colorTypeName|default:"ColorAsset"}}{% endset %}
-struct {{colorType}} {
-  fileprivate var name: String
-
-  #if swift(>=3.2)
-  @available(iOS 11.0, tvOS 11.0, watchOS 4.0, OSX 10.13, *)
-  var color: {{colorAlias}} {
-    return {{colorAlias}}(asset: self)
-  }
-  #endif
-}
-{% macro enumBlock assets sp %}
-{{sp}}  {% call casesBlock assets sp %}
-{{sp}}  {% if not param.noAllValues %}
-
-{{sp}}  // swiftlint:disable trailing_comma
-{{sp}}  static let allColors: [{{colorType}}] = [
-{{sp}}    {% set sp2 %}{{sp}}  {% endset %}
-{{sp}}    {% call allValuesBlock assets "color" "" sp2 %}
-{{sp}}  ]
-{{sp}}  static let allImages: [{{imageType}}] = [
-{{sp}}    {% set sp2 %}{{sp}}  {% endset %}
-{{sp}}    {% call allValuesBlock assets "image" "" sp2 %}
-{{sp}}  ]
-{{sp}}  // swiftlint:enable trailing_comma
-{{sp}}  @available(*, deprecated, renamed: "allImages")
-{{sp}}  static let allValues: [{{enumName}}Type] = allImages
-{{sp}}  {% endif %}
+  {% elif asset.items %}
+  {% call casesBlock asset.items %}
+  {% endif %}
+  {% endfor %}
 {% endmacro %}
-{% macro casesBlock assets sp %}
-{{sp}}  {% for asset in assets %}
-{{sp}}  {% if asset.type == "color" %}
-{{sp}}  static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{colorType}}(name: "{{asset.value}}")
-{{sp}}  {% elif asset.type == "image" %}
-{{sp}}  static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{imageType}}(name: "{{asset.value}}")
-{{sp}}  {% elif asset.items %}
-{{sp}}  enum {{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
-{{sp}}    {% set sp2 %}{{sp}}  {% endset %}
-{{sp}}    {% call casesBlock asset.items sp2 %}
-{{sp}}  }
-{{sp}}  {% endif %}
-{{sp}}  {% endfor %}
+{% macro allValuesBlock assets filter prefix %}
+  {% for asset in assets %}
+  {% if asset.type == filter %}
+  {{prefix}}{{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}},
+  {% elif asset.items and ( forceNamespaces == "true" or asset.isNamespaced == "true" ) %}
+  {% set prefix2 %}{{prefix}}{{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}}.{% endset %}
+  {% call allValuesBlock asset.items filter prefix2 %}
+  {% elif asset.items %}
+  {% call allValuesBlock asset.items filter prefix %}
+  {% endif %}
+  {% endfor %}
 {% endmacro %}
-{% macro allValuesBlock assets filter prefix sp %}
-{{sp}}  {% for asset in assets %}
-{{sp}}  {% if asset.type == filter %}
-{{sp}}  {{prefix}}{{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}},
-{{sp}}  {% elif asset.items %}
-{{sp}}  {% set prefix2 %}{{prefix}}{{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}}.{% endset %}
-{{sp}}  {% call allValuesBlock asset.items filter prefix2 sp %}
-{{sp}}  {% endif %}
-{{sp}}  {% endfor %}
-{% endmacro %}
-
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-enum {{enumName}} {
+{{accessModifier}} enum {{enumName}} {
   {% if catalogs.count > 1 %}
   {% for catalog in catalogs %}
-  enum {{catalog.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
-    {% call enumBlock catalog.assets "  " %}
+  {{accessModifier}} enum {{catalog.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+    {% filter indent:2 %}{% call enumBlock catalog.assets %}{% endfilter %}
   }
   {% endfor %}
   {% else %}
-  {% call enumBlock catalogs.first.assets "" %}
+  {% call enumBlock catalogs.first.assets %}
   {% endif %}
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
-extension {{imageAlias}} {
-  @available(iOS 1.0, tvOS 1.0, watchOS 1.0, *)
-  @available(OSX, deprecated,
-    message: "This initializer is unsafe on macOS, please use the {{imageType}}.image property")
-  convenience init!(asset: {{imageType}}) {
-    #if os(iOS) || os(tvOS)
-    let bundle = Bundle(for: BundleToken.self)
-    self.init(named: asset.name, in: bundle, compatibleWith: nil)
-    #elseif os(OSX) || os(watchOS)
-    self.init(named: asset.name)
-    #endif
+// MARK: - Implementation Details
+
+{{accessModifier}} struct {{colorType}} {
+  {{accessModifier}} fileprivate(set) var name: String
+
+  #if swift(>=3.2)
+  @available(iOS 11.0, tvOS 11.0, watchOS 4.0, OSX 10.13, *)
+  {{accessModifier}} var color: {{colorAlias}} {
+    return {{colorAlias}}(asset: self)
   }
+  #endif
 }
 
-extension {{colorAlias}} {
+{{accessModifier}} extension {{colorAlias}} {
   #if swift(>=3.2)
   @available(iOS 11.0, tvOS 11.0, watchOS 4.0, OSX 10.13, *)
   convenience init!(asset: {{colorType}}) {
@@ -134,6 +113,58 @@ extension {{colorAlias}} {
     #endif
   }
   #endif
+}
+
+{{accessModifier}} struct {{dataType}} {
+  {{accessModifier}} fileprivate(set) var name: String
+
+  #if (os(iOS) || os(tvOS) || os(OSX)) && swift(>=3.2)
+  @available(iOS 9.0, tvOS 9.0, OSX 10.11, *)
+  {{accessModifier}} var data: NSDataAsset {
+    return NSDataAsset(asset: self)
+  }
+  #endif
+}
+
+#if (os(iOS) || os(tvOS) || os(OSX)) && swift(>=3.2)
+@available(iOS 9.0, tvOS 9.0, OSX 10.11, *)
+{{accessModifier}} extension NSDataAsset {
+  convenience init!(asset: {{dataType}}) {
+    let bundle = Bundle(for: BundleToken.self)
+    self.init(name: asset.name, bundle: bundle)
+  }
+}
+#endif
+
+{{accessModifier}} struct {{imageType}} {
+  {{accessModifier}} fileprivate(set) var name: String
+
+  {{accessModifier}} var image: {{imageAlias}} {
+    let bundle = Bundle(for: BundleToken.self)
+    #if os(iOS) || os(tvOS)
+    let image = {{imageAlias}}(named: name, in: bundle, compatibleWith: nil)
+    #elseif os(OSX)
+    let image = bundle.image(forResource: name)
+    #elseif os(watchOS)
+    let image = {{imageAlias}}(named: name)
+    #endif
+    guard let result = image else { fatalError("Unable to load image named \(name).") }
+    return result
+  }
+}
+
+{{accessModifier}} extension {{imageAlias}} {
+  @available(iOS 1.0, tvOS 1.0, watchOS 1.0, *)
+  @available(OSX, deprecated,
+    message: "This initializer is unsafe on macOS, please use the {{imageType}}.image property")
+  convenience init!(asset: {{imageType}}) {
+    #if os(iOS) || os(tvOS)
+    let bundle = Bundle(for: BundleToken.self)
+    self.init(named: asset.name, in: bundle, compatibleWith: nil)
+    #elseif os(OSX) || os(watchOS)
+    self.init(named: asset.name)
+    #endif
+  }
 }
 
 private final class BundleToken {}

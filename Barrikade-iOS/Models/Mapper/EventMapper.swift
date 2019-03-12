@@ -12,13 +12,13 @@ extension Event: Mappable {
   // MARK: Mappable
   func mapping(map: Map) {
     // MARK: Attributes
+    self.id <- map["id"]
     self.address <- map["address"]
     self.boucle <- map["boucle"]
     self.descriptionn <- map["description"]
     self.end <- map["end"]
     self.endDayName <- map["endDayName"]
     self.endTime <- map["endTime"]
-    self.id <- map["id"]
     self.location <- map["location"]
     self.selff <- map["self"]
     self.start <- map["start"]

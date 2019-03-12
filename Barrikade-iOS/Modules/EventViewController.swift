@@ -50,7 +50,7 @@ final class EventViewController: UIViewController {
         let eventResults = realm.objects(Event.self)
         self.update(eventResults: eventResults)
         
-        notificationToken = eventResults.addNotificationBlock {[weak self] (changes: RealmCollectionChange) in
+        notificationToken = eventResults.observe {[weak self] (changes: RealmCollectionChange) in
             guard let eventResults = self?.realm.objects(Event.self) else { return }
             self?.update(eventResults: eventResults)
         }

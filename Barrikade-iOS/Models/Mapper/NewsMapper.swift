@@ -12,10 +12,10 @@ extension News: Mappable {
   // MARK: Mappable
   func mapping(map: Map) {
     // MARK: Attributes
+    self.id.value <- map["id"]
     self.chapo <- map["chapo"]
     self.date <- map["date"]
     self.descriptionn <- map["description"]
-    self.id <- map["id"]
     self.id_rubrique <- map["id_rubrique"]
     self.logo <- map["logo"]
     self.selff <- map["self"]

@@ -1,26 +1,28 @@
 PODS:
-  - Alamofire (4.5.1)
-  - KeychainAccess (3.1.0)
-  - Kingfisher (4.1.0)
-  - NetworkStack (0.1.5):
+  - Alamofire (4.8.1)
+  - KeychainAccess (3.1.2)
+  - Kingfisher (4.10.1)
+  - NetworkStack (0.1.6):
     - Alamofire (~> 4.0)
-    - KeychainAccess (~> 3.0)
-    - RxSwift (~> 3.0)
-  - ObjectMapper (3.0.0)
+    - KeychainAccess (~> 3.1)
+    - RxSwift (~> 4.0)
+  - ObjectMapper (3.4.2)
   - PageMenu (2.0.0)
-  - Realm (2.10.2):
-    - Realm/Headers (= 2.10.2)
-  - Realm/Headers (2.10.2)
-  - RealmSwift (2.10.2):
-    - Realm (= 2.10.2)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
   - Reusable (3.0.1):
     - Reusable/Storyboard (= 3.0.1)
     - Reusable/View (= 3.0.1)
   - Reusable/Storyboard (3.0.1)
   - Reusable/View (3.0.1)
-  - RxSwift (3.6.1)
-  - SwiftGen (5.2.1)
-  - SwiftLint (0.25.0)
+  - RxAtomic (4.4.1)
+  - RxSwift (4.4.1):
+    - RxAtomic (~> 4.4)
+  - SwiftGen (6.1.0)
+  - SwiftLint (0.31.0)
 
 DEPENDENCIES:
   - Kingfisher
@@ -32,20 +34,37 @@ DEPENDENCIES:
   - SwiftGen
   - SwiftLint
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - KeychainAccess
+    - Kingfisher
+    - NetworkStack
+    - ObjectMapper
+    - PageMenu
+    - Realm
+    - RealmSwift
+    - Reusable
+    - RxAtomic
+    - RxSwift
+    - SwiftGen
+    - SwiftLint
+
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
-  NetworkStack: 9dcf6c7cfce50111b2ef73963357638baa5fac7d
-  ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  NetworkStack: b3b64b19fb27bbe323a7f1b1ca18325df4fc4e2a
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
-  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
-  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   Reusable: 5362d10271ca8316b104698a21e90498f47e8339
-  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
-  SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
-  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
+  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 348d388d12762d167c7bfc66c0cca32f7d879855
+PODFILE CHECKSUM: 3dee69ffaf72063187d9aff4a4de5bfe83293749
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.1

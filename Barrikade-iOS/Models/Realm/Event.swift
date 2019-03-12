@@ -6,13 +6,13 @@ import Foundation
 final class Event: Object {
 
   enum Attributes: String {
+    case id = "id"
     case address = "address"
     case boucle = "boucle"
     case descriptionn = "descriptionn"
     case end = "end"
     case endDayName = "endDayName"
     case endTime = "endTime"
-    case id = "id"
     case location = "location"
     case selff = "selff"
     case start = "start"
@@ -21,13 +21,13 @@ final class Event: Object {
     case title = "title"
   }
 
+  dynamic var id: String?
   dynamic var address: String?
   dynamic var boucle: String?
   dynamic var descriptionn: String?
   dynamic var end: String?
   dynamic var endDayName: String?
   dynamic var endTime: String?
-  dynamic var id: String?
   dynamic var location: String?
   dynamic var selff: String?
   dynamic var start: String?

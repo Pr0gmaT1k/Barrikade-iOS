@@ -53,7 +53,7 @@ final class NewsViewController: UIViewController, StoryboardBased {
         let newsResults = realm.objects(News.self)
         self.update(newsResults: newsResults)
         
-        notificationToken = newsResults.addNotificationBlock {[weak self] (changes: RealmCollectionChange) in
+        notificationToken = newsResults.observe {[weak self] (changes: RealmCollectionChange) in
             guard let newsResults = self?.realm.objects(News.self) else { return }
             self?.update(newsResults: newsResults)
         }

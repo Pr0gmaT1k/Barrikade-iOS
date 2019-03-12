@@ -6,10 +6,10 @@ import Foundation
 final class News: Object {
 
   enum Attributes: String {
+    case id = "id"
     case chapo = "chapo"
     case date = "date"
     case descriptionn = "descriptionn"
-    case id = "id"
     case id_rubrique = "id_rubrique"
     case logo = "logo"
     case selff = "selff"
@@ -19,10 +19,10 @@ final class News: Object {
     case title = "title"
   }
 
+  var id = RealmOptional<Int64>()
   dynamic var chapo: String?
   dynamic var date: String?
   dynamic var descriptionn: String?
-  dynamic var id: String?
   dynamic var id_rubrique: String?
   dynamic var logo: String?
   dynamic var selff: String?

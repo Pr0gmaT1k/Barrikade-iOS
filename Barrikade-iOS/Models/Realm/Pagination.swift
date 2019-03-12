@@ -13,7 +13,7 @@ final class Pagination: Object {
 
   dynamic var next: String?
   dynamic var selff: String?
-  dynamic var totalEntries: String?
+  var totalEntries = RealmOptional<Int64>()
 
   override static func primaryKey() -> String? {
     return "next"

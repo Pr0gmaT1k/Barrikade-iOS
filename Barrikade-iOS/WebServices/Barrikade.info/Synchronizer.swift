@@ -37,7 +37,7 @@ struct Synchronizer {
     
     // MARK:- Public Properties
     public static var syncObserver: ((Bool) -> Void)? { didSet { Synchronizer.syncObserver?(Synchronizer.isSyncing) } }
-    public static var totalRemoteEntries: Int?
+    public static var totalRemoteEntries: Int64?
     
     
     
@@ -65,8 +65,7 @@ struct Synchronizer {
                 case .completed: break
                 case .next(let articleCollection):
                     // Check nullable value
-                    guard let totalEntriesString = articleCollection?.pagination?.totalEntries,
-                        let totalEntries = Int(totalEntriesString),
+                    guard let totalEntries = articleCollection?.pagination?.totalEntries.value,
                         let data = articleCollection?.data,
                         let id = data.last?.id else { return }
                     
@@ -94,7 +93,7 @@ struct Synchronizer {
                     print(error)
                     Synchronizer.isSyncing = false
                 }
-            }.addDisposableTo(disposeBag)
+            }.disposed(by: disposeBag)
     }
     
     /**
@@ -110,8 +109,7 @@ struct Synchronizer {
                 case .error(let error): print(error)
                 case .next(let eventCollection):
                     // Check nullable value
-                    guard let totalEntriesString = eventCollection?.pagination?.totalEntries,
-                        let totalEntries = Int(totalEntriesString),
+                    guard let totalEntries = eventCollection?.pagination?.totalEntries.value,
                         let data = eventCollection?.data,
                         let id = data.last?.id else { return }
                     
@@ -134,6 +132,6 @@ struct Synchronizer {
                         }
                     }
                 }
-        }.addDisposableTo(disposeBag)
+            }.disposed(by: disposeBag)
     }
 }
