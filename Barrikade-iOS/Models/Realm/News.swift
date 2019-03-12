@@ -10,7 +10,7 @@ final class News: Object {
     case chapo = "chapo"
     case date = "date"
     case descriptionn = "descriptionn"
-    case id_rubrique = "id_rubrique"
+    case idRubrique = "idRubrique"
     case logo = "logo"
     case selff = "selff"
     case soustitre = "soustitre"
@@ -23,7 +23,7 @@ final class News: Object {
   dynamic var chapo: String?
   dynamic var date: String?
   dynamic var descriptionn: String?
-  dynamic var id_rubrique: String?
+  var idRubrique = RealmOptional<Int64>()
   dynamic var logo: String?
   dynamic var selff: String?
   dynamic var soustitre: String?

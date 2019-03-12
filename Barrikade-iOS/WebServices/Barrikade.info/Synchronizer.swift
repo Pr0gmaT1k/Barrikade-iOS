@@ -33,12 +33,13 @@ struct Synchronizer {
     private let barrikadeWSClient =  BarrikadeWSClient()
     private let disposeBag = DisposeBag()
     private let realm = Realm.safeInstance()
+    private static var nonSavedArticle: [News] = [News]()
     private static var isSyncing: Bool = false { didSet { Synchronizer.syncObserver?(isSyncing) } }
-    
+    private static var newArticles: [News] = [News]() { didSet { Synchronizer.newsArticlesObserver?(newArticles) } }
     // MARK:- Public Properties
     public static var syncObserver: ((Bool) -> Void)? { didSet { Synchronizer.syncObserver?(Synchronizer.isSyncing) } }
+    public static var newsArticlesObserver: (([News]) -> Void)? { didSet { Synchronizer.newsArticlesObserver?(Synchronizer.newArticles) } }
     public static var totalRemoteEntries: Int64?
-    
     
     
     // Mark:- Public func

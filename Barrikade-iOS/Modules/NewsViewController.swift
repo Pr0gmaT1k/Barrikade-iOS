@@ -71,11 +71,10 @@ final class NewsViewController: UIViewController, StoryboardBased {
         if newsResults.count < 20 { return }
         self.tableView.isHidden = newsResults.isEmpty
         var orderedNews = newsResults.sorted { $0.0.dateObject.compare($0.1.dateObject) == .orderedDescending }
-        // divide data base in 4 while the waiting of rubrique iD in WS
-        let fakeRange: Int = orderedNews.count / 5
-        let startRange: Int = fakeRange * id
-        let endRange: Int = (fakeRange * (id + 1)) - 1
-        orderedNews = orderedNews[startRange...endRange].flatMap { $0 }
+        // If id = 0, it's aktuel info which is not filter, is just all news by date.
+        if self.id != 0 {
+            orderedNews = orderedNews.filter { $0.idRubrique.value == Int64(id) }
+        }
         news = orderedNews[2...orderedNews.endIndex - 1].flatMap { $0 }
         highlitedNews = orderedNews[orderedNews.startIndex...1].flatMap { $0 }
         self.tableView.reloadData()

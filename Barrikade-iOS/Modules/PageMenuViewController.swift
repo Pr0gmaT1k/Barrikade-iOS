@@ -63,7 +63,7 @@ final class PageMenuViewController: UIViewController {
         
         let globaleInfosVC = StoryboardScene.Main.newsViewController.instantiate()
         globaleInfosVC.title = L10n.pageMenuGlobaleInfos
-        globaleInfosVC.id = 3
+        globaleInfosVC.id = 5
         globaleInfosVC.delegate = self
         
 //        let agendaVC = StoryboardScene.Main.eventViewController.instantiate()
