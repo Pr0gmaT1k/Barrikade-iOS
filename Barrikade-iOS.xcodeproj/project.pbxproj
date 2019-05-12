@@ -24,7 +24,6 @@
 		A48DF6B51FFB69BD003C109F /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6A11FFB69BD003C109F /* NewsViewController.swift */; };
 		A48DF6B71FFB69BD003C109F /* PageMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF6A31FFB69BD003C109F /* PageMenuViewController.swift */; };
 		A48DF6B81FFB69BD003C109F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A48DF6A51FFB69BD003C109F /* Assets.xcassets */; };
-		A48DF6B91FFB69BD003C109F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48DF6A61FFB69BD003C109F /* LaunchScreen.storyboard */; };
 		A4A12D5C200BD28700C6B5E0 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A12D59200BD28700C6B5E0 /* News.swift */; };
 		A4A12D5D200BD28700C6B5E0 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A12D5A200BD28700C6B5E0 /* Pagination.swift */; };
 		A4A12D62200BD28E00C6B5E0 /* PaginationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A12D5F200BD28E00C6B5E0 /* PaginationMapper.swift */; };
@@ -523,7 +522,6 @@
 			files = (
 				BA01FD012052DF6C00E8A0B0 /* EventTableViewCell.xib in Resources */,
 				BA7E3F97204500FA00406E8A /* bootstrap.min.css in Resources */,
-				A48DF6B91FFB69BD003C109F /* LaunchScreen.storyboard in Resources */,
 				A48DF6B81FFB69BD003C109F /* Assets.xcassets in Resources */,
 				A416901B1FFC45AC00EE3682 /* HighlitedNewsCollectionViewCell.xib in Resources */,
 				A4E14AEB1FFBF8C8006A5F7E /* Colors.txt in Resources */,
