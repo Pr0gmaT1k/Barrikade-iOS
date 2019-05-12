@@ -59,7 +59,7 @@ final class EventViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(cellType: EventTableViewCell.self)
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 150
     }
     
@@ -67,7 +67,7 @@ final class EventViewController: UIViewController {
     private func update(eventResults: Results<Event>) {
         if eventResults.count < 3 { return }
         self.tableView.isHidden = eventResults.isEmpty
-        events = eventResults.sorted { $0.0.dateObject.compare($0.1.dateObject) == .orderedAscending }
+        events = eventResults.sorted { $0.dateObject.compare($1.dateObject) == .orderedAscending }
         self.tableView.reloadData()
     }
 }

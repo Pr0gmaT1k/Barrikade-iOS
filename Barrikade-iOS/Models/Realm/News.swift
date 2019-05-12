@@ -6,7 +6,7 @@ import Foundation
 final class News: Object {
 
   enum Attributes: String {
-    case id = "id"
+    case id = "id" /* Primary Key */
     case chapo = "chapo"
     case date = "date"
     case descriptionn = "descriptionn"
@@ -19,17 +19,17 @@ final class News: Object {
     case title = "title"
   }
 
-  var id = RealmOptional<Int64>()
-  dynamic var chapo: String?
-  dynamic var date: String?
-  dynamic var descriptionn: String?
-  var idRubrique = RealmOptional<Int64>()
-  dynamic var logo: String?
-  dynamic var selff: String?
-  dynamic var soustitre: String?
-  dynamic var surtitre: String?
-  dynamic var texte: String?
-  dynamic var title: String?
+  let id = RealmOptional<Int64>() /* Primary Key */
+  @objc dynamic var chapo: String?
+  @objc dynamic var date: String?
+  @objc dynamic var descriptionn: String?
+  let idRubrique = RealmOptional<Int64>()
+  @objc dynamic var logo: String?
+  @objc dynamic var selff: String?
+  @objc dynamic var soustitre: String?
+  @objc dynamic var surtitre: String?
+  @objc dynamic var texte: String?
+  @objc dynamic var title: String?
 
   override static func primaryKey() -> String? {
     return "id"

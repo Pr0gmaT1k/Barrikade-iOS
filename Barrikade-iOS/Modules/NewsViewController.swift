@@ -62,7 +62,7 @@ final class NewsViewController: UIViewController, StoryboardBased {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(cellType: NewsTableViewCell.self)
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 150
     }
     
@@ -70,13 +70,13 @@ final class NewsViewController: UIViewController, StoryboardBased {
     private func update(newsResults: Results<News>) {
         if newsResults.count < 20 { return }
         self.tableView.isHidden = newsResults.isEmpty
-        var orderedNews = newsResults.sorted { $0.0.dateObject.compare($0.1.dateObject) == .orderedDescending }
+        var orderedNews = newsResults.sorted { $0.dateObject.compare($1.dateObject) == .orderedDescending }
         // If id = 0, it's aktuel info which is not filter, is just all news by date.
         if self.id != 0 {
             orderedNews = orderedNews.filter { $0.idRubrique.value == Int64(id) }
         }
-        news = orderedNews[2...orderedNews.endIndex - 1].flatMap { $0 }
-        highlitedNews = orderedNews[orderedNews.startIndex...1].flatMap { $0 }
+        news = orderedNews[2...orderedNews.endIndex - 1].compactMap { $0 }
+        highlitedNews = orderedNews[orderedNews.startIndex...1].compactMap { $0 }
         self.tableView.reloadData()
     }
 }

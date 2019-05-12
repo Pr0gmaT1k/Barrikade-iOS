@@ -11,6 +11,6 @@ final class EventCollection: Object {
   }
 
   var data = List<Event>()
-  dynamic var pagination: Pagination?
+  @objc dynamic var pagination: Pagination?
 
 }

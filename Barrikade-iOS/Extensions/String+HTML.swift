@@ -24,12 +24,17 @@
 
 extension String {
     var removeHTMLParagraph: String {
-        return self.replacingOccurrences(of: "<p>", with: "").replacingOccurrences(of: "</p>", with: "")
+        return self.replacingOccurrences(of: "<p>", with: "")
+            .replacingOccurrences(of: "</p>", with: "")
+            .replacingOccurrences(of: "<i>", with: "")
+            .replacingOccurrences(of: "</i>", with: "")
     }
 
     var removeBarrikadeSpecific: String {
         return self.removeHTMLParagraph.replacingOccurrences(of: "<br class='autobr' />", with: "")
                                        .replacingOccurrences(of: "<strong>", with: "")
                                        .replacingOccurrences(of: "</strong>", with: "")
+                                       .replacingOccurrences(of: "<h3 class=\"spip\">", with: "")
+                                       .replacingOccurrences(of: "</h3>", with: "")
     }
 }

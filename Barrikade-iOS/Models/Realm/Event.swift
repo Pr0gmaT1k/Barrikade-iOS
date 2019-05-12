@@ -6,7 +6,7 @@ import Foundation
 final class Event: Object {
 
   enum Attributes: String {
-    case id = "id"
+    case id = "id" /* Primary Key */
     case address = "address"
     case boucle = "boucle"
     case descriptionn = "descriptionn"
@@ -21,19 +21,19 @@ final class Event: Object {
     case title = "title"
   }
 
-  dynamic var id: String?
-  dynamic var address: String?
-  dynamic var boucle: String?
-  dynamic var descriptionn: String?
-  dynamic var end: String?
-  dynamic var endDayName: String?
-  dynamic var endTime: String?
-  dynamic var location: String?
-  dynamic var selff: String?
-  dynamic var start: String?
-  dynamic var startDayName: String?
-  dynamic var startTime: String?
-  dynamic var title: String?
+  @objc dynamic var id: String? /* Primary Key */
+  @objc dynamic var address: String?
+  @objc dynamic var boucle: String?
+  @objc dynamic var descriptionn: String?
+  @objc dynamic var end: String?
+  @objc dynamic var endDayName: String?
+  @objc dynamic var endTime: String?
+  @objc dynamic var location: String?
+  @objc dynamic var selff: String?
+  @objc dynamic var start: String?
+  @objc dynamic var startDayName: String?
+  @objc dynamic var startTime: String?
+  @objc dynamic var title: String?
 
   override static func primaryKey() -> String? {
     return "id"

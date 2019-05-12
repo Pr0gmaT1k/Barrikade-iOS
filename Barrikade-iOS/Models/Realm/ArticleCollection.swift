@@ -11,6 +11,6 @@ final class ArticleCollection: Object {
   }
 
   var data = List<News>()
-  dynamic var pagination: Pagination?
+  @objc dynamic var pagination: Pagination?
 
 }

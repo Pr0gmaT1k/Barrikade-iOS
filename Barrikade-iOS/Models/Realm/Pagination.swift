@@ -6,14 +6,14 @@ import Foundation
 final class Pagination: Object {
 
   enum Attributes: String {
-    case next = "next"
+    case next = "next" /* Primary Key */
     case selff = "selff"
     case totalEntries = "totalEntries"
   }
 
-  dynamic var next: String?
-  dynamic var selff: String?
-  var totalEntries = RealmOptional<Int64>()
+  @objc dynamic var next: String? /* Primary Key */
+  @objc dynamic var selff: String?
+  let totalEntries = RealmOptional<Int64>()
 
   override static func primaryKey() -> String? {
     return "next"

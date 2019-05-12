@@ -91,7 +91,7 @@ final class PageMenuViewController: UIViewController {
         Synchronizer.syncObserver = { [weak self] isSyncing in
             if let totNewsInBase = self?.realm.objects(News.self).count,
                 let totRemoteNews = Synchronizer.totalRemoteEntries {
-                let nbNewsToSync = (totRemoteNews - totNewsInBase).description
+                let nbNewsToSync = (Int(totRemoteNews) - totNewsInBase).description
                 self?.syncLabel.text = L10n.syncMessageArticleToSync + nbNewsToSync
             }
             self?.syncViewCSTR.constant = isSyncing ? 30 : 0
